@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IWM — Influencer Weds Marketing | Real Creators. Real Impact.</title>
+<title>IWM - Influencer Weds Marketing | Real Creators. Real Impact.</title>
+<meta name="description" content="IWM is a strategic influencer marketing agency connecting brands with relevant creators through authentic storytelling, measurable campaigns and lasting partnerships.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -62,13 +63,14 @@ h1,h2.serif{font-family:var(--serif);font-weight:400;line-height:.95}
 #home{min-height:100vh;display:flex;align-items:stretch;background:#0c0b09;overflow:hidden}
 .hero-bg{position:absolute;inset:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.95}
-.hero-bg:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,9,7,.82) 0%, rgba(10,9,7,.45) 36%, rgba(10,9,7,.05) 65%, rgba(10,9,7,.25) 100%), linear-gradient(0deg, rgba(10,9,7,.75) 0%, transparent 45%)}
+.hero-bg:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,9,7,.82) 0%,rgba(10,9,7,.45) 36%,rgba(10,9,7,.05) 65%,rgba(10,9,7,.25) 100%),linear-gradient(0deg,rgba(10,9,7,.75) 0%,transparent 45%)}
 .hero-inner{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:130px 34px 40px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:20px}
 .hero-copy h1{font-size:clamp(56px,7.2vw,108px);letter-spacing:-.01em;text-transform:uppercase}
 .hero-copy h1 em{font-style:italic;font-weight:300}
 .hero-sub{margin-top:14px;font-size:12.5px;letter-spacing:.04em;opacity:.8}
 .hero-sub span{opacity:.5;margin:0 6px}
-.scroll-cue{margin-top:46px;display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.12em;opacity:.7}
+.hero-ctas{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
+.scroll-cue{margin-top:28px;display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.12em;opacity:.7}
 .mouse{width:26px;height:40px;border:1px solid rgba(255,255,255,.5);border-radius:20px;display:flex;justify-content:center;padding-top:8px}
 .mouse i{width:3px;height:8px;background:#fff;border-radius:10px;animation:wheel 1.6s infinite}
 @keyframes wheel{0%{transform:translateY(0);opacity:1}100%{transform:translateY(12px);opacity:0}}
@@ -82,10 +84,15 @@ h1,h2.serif{font-family:var(--serif);font-weight:400;line-height:.95}
 .f-mini .bars{display:flex;align-items:end;gap:4px;height:36px;margin-top:8px}
 .f-mini .bars span{flex:1;background:linear-gradient(#fff,#ffffff55);border-radius:3px}
 /* ABOUT */
-#about{background:radial-gradient(1200px 600px at 70% 50%, #3a2f26 0%, #1a1511 45%, #0c0b09 100%);padding:110px 0 70px;overflow:hidden;border-top:1px solid #000}
+#about{background:radial-gradient(1200px 600px at 70% 50%,#3a2f26 0%,#1a1511 45%,#0c0b09 100%);padding:110px 0 70px;overflow:hidden;border-top:1px solid #000}
 .about-grid{max-width:1320px;margin:0 auto;padding:0 34px;display:grid;grid-template-columns:360px 1fr 110px;gap:30px;align-items:center}
 .about-copy h2{font-size:clamp(42px,4.2vw,66px);line-height:.95;margin:14px 0 18px}
 .about-copy p{font-size:14.5px;line-height:1.7;opacity:.75}
+.about-values{margin-top:28px;display:flex;flex-direction:column;gap:0}
+.about-val-item{display:flex;align-items:baseline;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.about-val-item:last-child{border-bottom:0}
+.about-val-num{font-family:var(--serif);font-size:12px;opacity:.38;letter-spacing:.08em;flex-shrink:0;width:22px}
+.about-val-text{font-size:13px;letter-spacing:.04em;opacity:.82;font-weight:500}
 .about-collage{position:relative;height:560px;display:flex;justify-content:center}
 .main-portrait{width:360px;height:500px;object-fit:cover;border-radius:18px;box-shadow:0 40px 80px rgba(0,0,0,.5)}
 .mini-card{position:absolute;width:170px;border-radius:14px;overflow:hidden;border:4px solid #fff;box-shadow:0 20px 50px rgba(0,0,0,.5);background:#fff}
@@ -104,54 +111,71 @@ h1,h2.serif{font-family:var(--serif);font-weight:400;line-height:.95}
 .svc-wrap{position:relative;max-width:1320px;margin:0 auto;padding:0 34px}
 .svc-track-outer{overflow:hidden;padding:30px 0 10px;cursor:grab}
 .svc-track{display:flex;gap:18px;transition:transform .6s cubic-bezier(.2,.7,.2,1);will-change:transform}
-.svc{flex:0 0 190px;height:340px;border-radius:18px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.14);background:#151310;text-align:left;transform:perspective(800px) rotateY(0deg);transition:.5s}
-.svc img{width:100%;height:58%;object-fit:cover;opacity:.9}
-.svc-body{padding:14px 14px}
-.svc-body h4{font-size:13px;line-height:1.3;min-height:34px}
+.svc{flex:0 0 220px;height:390px;border-radius:18px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.14);background:#151310;text-align:left;transition:.5s}
+.svc img{width:100%;height:52%;object-fit:cover;opacity:.9}
+.svc-body{padding:16px}
+.svc-body h4{font-size:13.5px;line-height:1.3;min-height:34px;font-weight:600}
+.svc-body p{font-size:11.5px;opacity:.55;line-height:1.55;margin-top:8px}
 .svc-body i{font-size:10px;letter-spacing:.2em;opacity:.5;font-style:normal}
 .svc-num{position:absolute;bottom:10px;left:14px;font-family:var(--serif);font-size:28px;opacity:.35}
-.svc.active{flex-basis:210px;box-shadow:0 0 0 1px var(--gold), 0 30px 60px rgba(0,0,0,.6);transform:scale(1.04)}
+.svc.active{flex-basis:240px;box-shadow:0 0 0 1px var(--gold),0 30px 60px rgba(0,0,0,.6);transform:scale(1.04)}
 .svc-arrow{position:absolute;top:45%;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.5);color:#fff;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
 .svc-arrow:hover{background:#fff;color:#000}
 #svcPrev{left:8px}#svcNext{right:8px}
 .swipe-hint{margin-top:18px;font-size:11px;letter-spacing:.2em;opacity:.5}
 /* CAMPAIGNS */
-#campaigns{min-height:720px;display:flex;align-items:center;background:#d9c7a8 url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1600&auto=format&fit=crop') center/cover;color:#111;padding:90px 0;position:relative}
-#campaigns:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(242,236,225,.96) 20%, rgba(242,236,225,.75) 45%, rgba(0,0,0,.15) 100%)}
-.camp-grid{position:relative;z-index:2;max-width:1320px;margin:0 auto;padding:0 34px;display:grid;grid-template-columns:380px 1fr;gap:40px;width:100%;align-items:center}
-.camp-grid h2{font-size:clamp(44px,4.5vw,68px);line-height:.9;margin:10px 0 16px}
-.camp-grid p{font-size:14px;opacity:.7;line-height:1.6}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-.tabs button{border-radius:100px;padding:8px 16px;font-size:12px;border:1px solid rgba(0,0,0,.18);background:rgba(255,255,255,.6)}
-.tabs button.on{background:#111;color:#fff}
-.camp-cards{display:flex;gap:16px;align-items:stretch;overflow:hidden}
-.ccard{border-radius:20px;overflow:hidden;background:#111;color:#fff;position:relative;min-height:420px;display:flex;flex-direction:column;justify-content:flex-end}
-.ccard.main{flex:1.4}
-.ccard.side{flex:.7;opacity:.9;transform:scale(.96)}
-.ccard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ccard:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg, rgba(0,0,0,.75) 0%, transparent 55%)}
-.ccard-body{position:relative;z-index:2;padding:20px}
-.ccard-body h3{font-family:var(--serif);font-size:26px}
-.metrics{display:flex;gap:18px;margin-top:12px}
-.metrics b{display:block;font-size:15px}
-.metrics span{font-size:10px;opacity:.7}
+#campaigns{background:var(--paper);color:#111;padding:100px 0;overflow:hidden}
+.camp-head{max-width:1320px;margin:0 auto;padding:0 34px;display:grid;grid-template-columns:380px 1fr;gap:40px;align-items:end;margin-bottom:52px}
+.camp-head h2{font-size:clamp(44px,4.5vw,68px);line-height:.9;margin:10px 0 16px}
+.cs-tabs{display:flex;gap:8px;flex-wrap:wrap}
+.cs-tabs button{border-radius:100px;padding:9px 18px;font-size:12px;border:1px solid rgba(0,0,0,.18);background:rgba(255,255,255,.6);cursor:pointer;transition:.3s;letter-spacing:.03em}
+.cs-tabs button.on{background:#111;color:#fff}
+.cs-display{max-width:1320px;margin:0 auto;padding:0 34px}
+.cs-layout{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(0,0,0,.1);border-radius:20px;overflow:hidden;background:#fff;min-height:520px}
+.cs-left{padding:44px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid rgba(0,0,0,.08)}
+.cs-index{font-size:10px;letter-spacing:.26em;text-transform:uppercase;opacity:.42;margin-bottom:6px}
+.cs-brand-name{font-family:var(--serif);font-size:32px;font-weight:500;line-height:1;margin-bottom:18px}
+.cs-objective{font-size:13px;opacity:.6;line-height:1.65;margin-bottom:22px;max-width:340px}
+.cs-strategy{margin-bottom:22px}
+.cs-strategy h5{font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.42;margin-bottom:12px}
+.cs-strategy ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.cs-strategy ul li{font-size:12.5px;opacity:.7;display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+.cs-strategy ul li:before{content:'-';opacity:.3;flex-shrink:0;margin-top:1px}
+.cs-deliverables{font-size:11.5px;opacity:.42;line-height:1.55;border-top:1px solid rgba(0,0,0,.07);padding-top:14px}
+.cs-quote{border-left:2px solid var(--gold);padding-left:16px;margin-top:auto;padding-top:16px}
+.cs-quote p{font-family:var(--serif);font-size:16px;font-style:italic;line-height:1.55;opacity:.78}
+.cs-quote cite{font-size:11px;opacity:.45;letter-spacing:.06em;display:block;margin-top:8px;font-style:normal}
+.cs-right{display:flex;flex-direction:column}
+.cs-image{flex:1;position:relative;min-height:280px;overflow:hidden}
+.cs-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.6s}
+.cs-image:hover img{transform:scale(1.04)}
+.cs-metrics{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(0,0,0,.08)}
+.cs-metric{padding:22px 20px;border-right:1px solid rgba(0,0,0,.08)}
+.cs-metric:last-child{border-right:0}
+.cs-metric-val{font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);font-weight:500;display:block;line-height:1;color:#111}
+.cs-metric-label{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.45;display:block;margin-top:5px}
+.cs-outcome{padding:14px 20px;border-top:1px solid rgba(0,0,0,.08);background:rgba(0,0,0,.025)}
+.cs-outcome p{font-size:12px;opacity:.55;line-height:1.55}
 /* CREATORS */
 #creators{background:#0a0908;padding:90px 0}
 .cre-grid{max-width:1320px;margin:0 auto;padding:0 34px;display:grid;grid-template-columns:320px 1fr;gap:30px}
 .cre-grid h2{font-size:clamp(38px,3.8vw,56px);line-height:.95;margin:12px 0 14px}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
-.filters button{border-radius:100px;padding:8px 16px;font-size:12px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff}
+.filters button{border-radius:100px;padding:8px 16px;font-size:12px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;cursor:pointer}
 .filters button.on{background:#fff;color:#000}
 .coverflow{display:flex;gap:14px;justify-content:center;align-items:center;perspective:1200px;min-height:440px}
 .crf{width:170px;height:380px;border-radius:18px;overflow:hidden;position:relative;transition:.6s cubic-bezier(.2,.7,.2,1);border:1px solid rgba(255,255,255,.15);cursor:pointer;flex-shrink:0}
 .crf img{width:100%;height:100%;object-fit:cover}
-.crf.center{width:220px;height:440px;box-shadow:0 30px 80px rgba(0,0,0,.6), 0 0 0 1px var(--gold)}
+.crf.center{width:220px;height:440px;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px var(--gold)}
 .crf.left1{transform:rotateY(28deg) scale(.92);opacity:.85}
 .crf.left2{transform:rotateY(38deg) scale(.84);opacity:.6}
 .crf.right1{transform:rotateY(-28deg) scale(.92);opacity:.85}
 .crf.right2{transform:rotateY(-38deg) scale(.84);opacity:.6}
-.crf-info{position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent, rgba(0,0,0,.85));font-size:12px}
+.crf-info{position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:12px}
 .crf-info b{display:block;font-size:14px}
+.cre-ecosystem{margin-top:28px;background:#131210;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:26px 24px}
+.cre-ecosystem-num{font-family:var(--serif);font-size:56px;line-height:1}
+.cre-ecosystem-label{font-size:10px;letter-spacing:.26em;text-transform:uppercase;opacity:.42;line-height:1.7;margin-top:2px}
 /* PROCESS */
 #process{background:var(--paper);color:#111;padding:90px 0}
 .proc-head{max-width:1320px;margin:0 auto;padding:0 34px;display:grid;grid-template-columns:1fr 260px;gap:20px;align-items:end;margin-bottom:40px}
@@ -167,31 +191,54 @@ h1,h2.serif{font-family:var(--serif);font-weight:400;line-height:.95}
 .pstep b.num{font-family:var(--serif);font-size:22px;opacity:.6}
 .pstep h4{font-size:14px;margin:6px 0}
 .pstep p{font-size:11.5px;opacity:.6;line-height:1.5}
-.pstep:after{content:'→';position:absolute;top:62px;right:-10px;opacity:.3}
+.pstep:after{content:'to';font-size:11px;position:absolute;top:62px;right:-14px;opacity:.25}
 /* BRANDS */
 #brands{background:var(--paper);color:#111;padding:20px 0 70px;border-top:1px solid rgba(0,0,0,.08)}
 .brands-top{max-width:1320px;margin:0 auto;padding:30px 34px;display:grid;grid-template-columns:320px 1fr;gap:30px;align-items:start}
 .brands-top h2{font-size:clamp(30px,3vw,42px);line-height:1;margin-top:10px}
-.logo-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(0,0,0,.1);border-radius:12px;overflow:hidden;background:#fff}
-.logo-grid div{padding:22px 10px;text-align:center;font-weight:800;letter-spacing:.04em;font-size:15px;border:1px solid rgba(0,0,0,.06);display:flex;align-items:center;justify-content:center;min-height:74px}
-.logo-grid div span{font-family:var(--serif);font-weight:500}
+.logo-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(0,0,0,.1);border-radius:12px;overflow:hidden;background:#fff}
+.logo-grid div{padding:26px 10px;text-align:center;border:1px solid rgba(0,0,0,.06);display:flex;align-items:center;justify-content:center;min-height:82px}
 .brands-bottom{max-width:1320px;margin:20px auto 0;padding:0 34px;display:grid;grid-template-columns:1.1fr 1.3fr .7fr;gap:14px}
 .bcard{border-radius:14px;overflow:hidden;position:relative;min-height:170px}
 .bcard.dark{background:#111;color:#fff;padding:22px;display:flex;flex-direction:column;justify-content:center}
 .bcard img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .bcard .over{position:relative;z-index:2}
+/* TESTIMONIALS */
+#testimonials{background:#0c0b09;padding:100px 0;overflow:hidden}
+.testi-head{max-width:1320px;margin:0 auto;padding:0 34px;margin-bottom:48px}
+.testi-head h2{font-size:clamp(34px,3.4vw,52px);line-height:.95;margin:12px 0 0;max-width:520px}
+.testi-slider-wrap{max-width:1320px;margin:0 auto;padding:0 34px}
+.testi-track-outer{overflow:hidden}
+.testi-track{display:flex;gap:24px;transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+.tcard{flex:0 0 calc(50% - 12px);background:#131210;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:36px 36px 28px;display:flex;flex-direction:column;gap:16px}
+.tcard-ql{font-family:var(--serif);font-size:40px;line-height:.8;color:var(--gold);opacity:.3;margin-bottom:-4px}
+.tcard p{font-size:14px;line-height:1.78;opacity:.78;flex:1}
+.tcard-source{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,.08);padding-top:16px}
+.tcard-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#2a2520,#3a3028);border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;flex-shrink:0;color:var(--gold)}
+.tcard-name{font-size:12px;opacity:.6;letter-spacing:.05em}
+.testi-controls{display:flex;align-items:center;gap:14px;margin-top:30px}
+.testi-btn{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.3s;font-size:13px}
+.testi-btn:hover{background:#fff;color:#000}
+.testi-dots{display:flex;gap:6px;align-items:center}
+.testi-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.22);cursor:pointer;transition:.35s}
+.testi-dot.on{background:var(--gold);width:20px;border-radius:4px}
 /* PERFORMANCE */
 #performance{background:#0b0a09;padding:90px 0;overflow:hidden}
 .perf-grid{max-width:1320px;margin:0 auto;padding:0 34px;display:grid;grid-template-columns:320px 1fr 300px;gap:28px;align-items:center}
 .perf-grid h2{font-size:clamp(36px,3.6vw,52px);line-height:.95;margin:12px 0 14px}
 .perf-mid{position:relative;height:480px}
 .glass{background:rgba(20,19,17,.78);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 18px;position:absolute;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.g1{top:0;left:10%;width:200px}.g2{top:36%;left:28%;width:300px}.g3{bottom:0;left:6%;width:180px}
+.g1{top:0;left:10%;width:210px}.g2{top:36%;left:28%;width:300px}.g3{bottom:0;left:6%;width:190px}
 .glass b.big{font-family:var(--serif);font-size:32px;display:block}
 .up{color:#7ddf8b;font-size:12px}
 .perf-right{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .perf-right img{border-radius:12px;height:120px;width:100%;object-fit:cover}
-.soc-row{display:flex;gap:10px;margin-top:10px;font-size:13px;opacity:.8}
+.soc-row{display:flex;gap:10px;margin-top:10px;font-size:13px;opacity:.8;align-items:center}
+.camp-metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.camp-metric-box{background:#1a1815;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px}
+.camp-metric-box .val{font-family:var(--serif);font-size:22px;display:block;line-height:1}
+.camp-metric-box .lbl{font-size:9px;letter-spacing:.14em;opacity:.48;text-transform:uppercase;display:block;margin-top:3px}
+.camp-metric-box .sub{font-size:10px;opacity:.36;display:block;margin-top:2px}
 /* CONTACT */
 #contact{background:var(--paper);color:#111;padding:80px 0}
 .contact-grid{max-width:1320px;margin:0 auto;padding:0 34px;display:grid;grid-template-columns:300px 1fr 380px;gap:26px;align-items:stretch}
@@ -209,7 +256,6 @@ h1,h2.serif{font-family:var(--serif);font-weight:400;line-height:.95}
 .toggle-tabs{display:flex;background:#eee;border-radius:100px;padding:4px;margin-bottom:16px}
 .toggle-tabs button{flex:1;border:0;background:transparent;border-radius:100px;padding:8px;font-size:12px}
 .toggle-tabs button.on{background:#111;color:#fff}
-/* FOOTER */
 footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rgba(255,255,255,.08)}
 .foot-grid{max-width:1320px;margin:0 auto;padding:0 34px;display:grid;grid-template-columns:1.2fr .7fr .8fr 1fr;gap:30px}
 .foot-grid h5{font-size:11px;letter-spacing:.18em;opacity:.6;margin-bottom:14px}
@@ -217,12 +263,11 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
 .foot-grid ul a:hover{color:var(--gold)}
 .news-box{display:flex;border:1px solid rgba(255,255,255,.2);border-radius:10px;overflow:hidden;margin-top:12px}
 .news-box input{flex:1;background:transparent;border:0;padding:12px;color:#fff;outline:none;font-size:13px}
-.news-box button{background:#fff;color:#000;border:0;padding:0 16px}
+.news-box button{background:#fff;color:#000;border:0;padding:0 16px;cursor:pointer}
 .socials{display:flex;gap:12px;margin-top:16px;font-size:16px}
 .socials a{width:32px;height:32px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s}
 .socials a:hover{background:#fff;color:#000}
 .copy{max-width:1320px;margin:30px auto 0;padding:18px 34px 0;border-top:1px solid rgba(255,255,255,.08);font-size:11px;opacity:.5;display:flex;justify-content:space-between}
-/* modal toast */
 #modal{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px}
 #modal.open{display:flex}
 .modal-box{background:#f6f1e6;color:#111;border-radius:20px;max-width:560px;width:100%;overflow:hidden;max-height:90vh;overflow-y:auto}
@@ -230,9 +275,12 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
 .modal-pad{padding:26px}
 #toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:#111;color:#fff;border:1px solid rgba(255,255,255,.2);padding:14px 22px;border-radius:100px;font-size:13px;opacity:0;transition:.4s;z-index:1001;pointer-events:none}
 #toast.show{opacity:1;transform:translateX(-50%)}
+@media(prefers-reduced-motion:reduce){.reveal{transition:none}.float{transition:none}.svc-track,.testi-track{transition:none}}
 @media(max-width:1080px){
-  .hero-inner,.about-grid,.camp-grid,.cre-grid,.brands-top,.perf-grid,.contact-grid{grid-template-columns:1fr}
-  .hero-visual{height:420px}.about-collage{height:480px}.proc-row{grid-template-columns:repeat(2,1fr);gap:26px}.proc-row:before,#procFill{display:none}
+  .hero-inner,.about-grid,.cre-grid,.brands-top,.perf-grid,.contact-grid,.camp-head{grid-template-columns:1fr}
+  .cs-layout{grid-template-columns:1fr}.cs-left{border-right:0;border-bottom:1px solid rgba(0,0,0,.08)}
+  .hero-visual{height:420px}.about-collage{height:480px}
+  .proc-row{grid-template-columns:repeat(2,1fr);gap:26px}.proc-row:before,#procFill{display:none}
   .foot-grid{grid-template-columns:1fr 1fr}
   nav.desk{display:none}#hamb{display:block}
   .perf-mid{height:420px}.mid-img{min-height:360px}
@@ -240,35 +288,27 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
   .coverflow{overflow-x:auto;justify-content:flex-start;padding-bottom:10px}
   .crf{flex:0 0 200px;transform:none!important;opacity:1!important;height:360px}.crf.center{height:360px;width:200px}
   .about-stats{border:0;border-top:1px solid rgba(255,255,255,.12);padding:20px 0 0;flex-direction:row;gap:30px}
+  .tcard{flex:0 0 100%}
 }
 @media(max-width:768px){
-  header{padding:14px 20px}
-  header.scrolled{padding:10px 20px}
-  .hero-inner{padding:110px 20px 30px}
-  .about-grid, .camp-grid, .cre-grid, .proc-row, .brands-top, .brands-bottom, .perf-grid, .contact-grid, .foot-grid, .proc-head, .svc-wrap{padding-left:20px;padding-right:20px}
+  header{padding:14px 20px}header.scrolled{padding:10px 20px}
+  .hero-inner,.about-grid,.cre-grid,.proc-row,.brands-top,.brands-bottom,.perf-grid,.contact-grid,.proc-head,.svc-wrap,.camp-head,.cs-display,.testi-head,.testi-slider-wrap{padding-left:20px;padding-right:20px}
   .hero-copy h1{font-size:clamp(46px,12vw,60px)}
   .hero-visual{height:280px}
-  .f-card, .f-mini, .f-ig, .f-heart{transform:scale(0.75)}
-  .f-card{right:-10%;top:0}
-  .f-mini{right:0;bottom:-10%}
-  .about-collage{height:320px}
-  .mini-card img{height:120px}
-  .mini-card{width:110px}
-  .mini-card:nth-child(3), .mini-card:nth-child(5){width:90px}
-  .proc-row{grid-template-columns:1fr;gap:30px}
-  .pstep:after{content:none}
+  .f-card,.f-mini,.f-ig,.f-heart{transform:scale(0.75)}.f-card{right:-10%;top:0}.f-mini{right:0;bottom:-10%}
+  .about-collage{height:320px}.mini-card img{height:120px}.mini-card{width:110px}
+  .mini-card:nth-child(3),.mini-card:nth-child(5){width:90px}
+  .proc-row{grid-template-columns:1fr;gap:30px}.pstep:after{content:none}
   .foot-grid{grid-template-columns:1fr;gap:30px}
-  .camp-cards{flex-direction:column}
-  .ccard.side{display:none}
-  .perf-mid{height:300px}
-  .glass{transform:scale(0.85);transform-origin:left center}
-  .g1,.g2,.g3{left:5%;width:220px}
+  .cs-metrics{grid-template-columns:repeat(3,1fr)}.cs-left{padding:26px 22px}
+  .perf-mid{height:300px}.glass{transform:scale(0.85);transform-origin:left center}.g1,.g2,.g3{left:5%;width:220px}
   .logo-grid{grid-template-columns:1fr 1fr}
-  .about-stats{flex-direction:column;gap:16px;align-items:flex-start}
-  .v-scroll{display:none}
+  .about-stats{flex-direction:column;gap:16px;align-items:flex-start}.v-scroll{display:none}
   #pageInd{right:14px;bottom:14px;font-size:10px}
-  .contact-grid h2{font-size:32px}
-  .cta-row{flex-direction:column}
+  .contact-grid h2{font-size:32px}.cta-row{flex-direction:column}
+  .tcard{flex:0 0 calc(100vw - 64px)}
+  .camp-metrics-grid{grid-template-columns:1fr 1fr}.brands-bottom{display:none}
+  .hero-ctas .btn-light,.hero-ctas .btn-dark{padding:10px 18px;font-size:12px}
 }
 </style>
 </head>
@@ -280,34 +320,38 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
 <header id="header">
   <div class="brand"><b>IWM</b><small>INFLUENCER WEDS MARKETING</small></div>
   <nav class="desk" id="deskNav">
-    <a href="#about">About</a><a href="#services">Services</a><a href="#campaigns">Campaigns</a><a href="#creators">Creators</a><a href="#process">Process</a>
+    <a href="#about">About</a><a href="#services">Services</a><a href="#campaigns">Work</a><a href="#creators">Creators</a><a href="#process">Process</a><a href="#testimonials">Stories</a>
   </nav>
   <div style="display:flex;gap:10px;align-items:center">
     <a href="#contact" class="btn-pill">Let's Talk <i class="fa-solid fa-arrow-right" style="font-size:11px"></i></a>
-    <button id="hamb"><i class="fa-solid fa-bars"></i></button>
+    <button id="hamb" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
   </div>
 </header>
-<div id="mobileMenu">
-  <button id="closeMenu" style="align-self:flex-end;background:none;border:1px solid #fff;color:#fff;border-radius:50%;width:44px;height:44px"><i class="fa-solid fa-xmark"></i></button>
-  <a href="#about">About</a><a href="#services">Services</a><a href="#campaigns">Campaigns</a><a href="#creators">Creators</a><a href="#process">Process</a><a href="#contact">Let's Talk</a>
-  <p style="opacity:.5;font-size:12px;margin-top:20px">Real Creators. Real Impact. — IWM © 2025</p>
+<div id="mobileMenu" role="dialog" aria-label="Navigation">
+  <button id="closeMenu" style="align-self:flex-end;background:none;border:1px solid #fff;color:#fff;border-radius:50%;width:44px;height:44px" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  <a href="#about">About</a><a href="#services">Services</a><a href="#campaigns">Work</a><a href="#creators">Creators</a><a href="#process">Process</a><a href="#testimonials">Stories</a><a href="#contact">Let's Talk</a>
+  <p style="opacity:.5;font-size:12px;margin-top:20px">Real Creators. Real Impact. - IWM 2025</p>
 </div>
-<div id="pageInd">01 / 10</div>
+<div id="pageInd" aria-hidden="true">01 / 10</div>
 
 <!-- 01 HERO -->
 <section id="home">
-  <div class="hero-bg"><img id="heroImg" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop" alt="Creator"></div>
+  <div class="hero-bg"><img id="heroImg" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop" alt="Creator at work"></div>
   <div class="hero-inner">
     <div class="hero-copy reveal in">
-      <h1>Real<br>Creators.<br>Real Impact.</h1>
+      <h1>Real<br>Creators.<br><em>Real Impact.</em></h1>
       <div class="hero-sub">Influencer Marketing <span>|</span> Creator Management <span>|</span> Brand Campaigns</div>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-light">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#campaigns" class="btn-pill" style="border-color:rgba(255,255,255,.35)">Explore Our Work</a>
+      </div>
       <div class="scroll-cue"><span class="mouse"><i></i></span> Scroll to explore</div>
     </div>
     <div class="hero-visual" id="heroVisual">
-      <div class="float f-ig"><i class="fa-brands fa-instagram"></i></div>
-      <div class="float f-heart"><i class="fa-solid fa-heart"></i> <small style="font-size:11px;color:#111">12.4k</small></div>
+      <div class="float f-ig"><i class="fa-brands fa-instagram" aria-hidden="true"></i></div>
+      <div class="float f-heart"><i class="fa-solid fa-heart" aria-hidden="true"></i> <small style="font-size:11px;color:#111">313K</small></div>
       <div class="float f-card"><span style="font-size:11px;opacity:.6">Creators</span><b>build trust. We build brands.</b></div>
-      <div class="float f-mini"><span style="font-size:11px;opacity:.7">Campaign ROI</span><div style="font-size:20px;font-weight:800">+220%</div><div class="bars"><span style="height:40%"></span><span style="height:65%"></span><span style="height:50%"></span><span style="height:90%"></span><span style="height:100%"></span></div></div>
+      <div class="float f-mini"><span style="font-size:11px;opacity:.7">Best Campaign CPV</span><div style="font-size:20px;font-weight:800">Rs.0.08</div><div class="bars"><span style="height:40%"></span><span style="height:65%"></span><span style="height:50%"></span><span style="height:90%"></span><span style="height:100%"></span></div></div>
     </div>
   </div>
 </section>
@@ -316,22 +360,27 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
 <section id="about">
   <div class="about-grid">
     <div class="about-copy reveal">
-      <div class="eyebrow">About Us</div>
-      <h2>More Than<br>Just Marketing.</h2>
-      <p>We are a creative agency that connects brands with the right creators, builds meaningful stories and turns influence into real business growth.</p>
+      <div class="eyebrow">About IWM</div>
+      <h2 style="font-family:var(--serif);font-weight:400">More Than<br>Just Marketing.</h2>
+      <p>IWM is a team of creatives, strategists and digital experts helping brands connect with audiences through creator-led storytelling, influencer partnerships and content innovation. Founded in 2023.</p>
+      <div class="about-values">
+        <div class="about-val-item"><span class="about-val-num">01</span><span class="about-val-text">Authenticity</span></div>
+        <div class="about-val-item"><span class="about-val-num">02</span><span class="about-val-text">Agility</span></div>
+        <div class="about-val-item"><span class="about-val-num">03</span><span class="about-val-text">Results-Driven Creativity</span></div>
+      </div>
       <br><button class="btn-light" onclick="openModal('story')">Our Story <i class="fa-solid fa-arrow-right"></i></button>
     </div>
     <div class="about-collage reveal" id="collage">
-      <img class="main-portrait" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop" alt="">
-      <div class="mini-card"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=400&auto=format&fit=crop"></div>
-      <div class="mini-card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop"></div>
-      <div class="mini-card"><img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=400&auto=format&fit=crop"></div>
-      <div class="mini-card"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=400&auto=format&fit=crop"></div>
+      <img class="main-portrait" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop" alt="Creator at work">
+      <div class="mini-card"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=400&auto=format&fit=crop" alt=""></div>
+      <div class="mini-card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop" alt=""></div>
+      <div class="mini-card"><img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=400&auto=format&fit=crop" alt=""></div>
+      <div class="mini-card"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=400&auto=format&fit=crop" alt=""></div>
     </div>
     <div class="about-stats reveal">
-      <div><b data-count="100" data-suffix="+">0</b><span>Brands Partnered</span></div>
-      <div><b data-count="500" data-suffix="+">0</b><span>Creators Managed</span></div>
-      <div><b data-count="5" data-suffix="M+">0</b><span>People Reached</span></div>
+      <div><b data-count="40" data-suffix="+">0</b><span>Exclusive Creators</span></div>
+      <div><b data-count="3" data-suffix="+">0</b><span>Brand Campaigns</span></div>
+      <div><b data-count="2.8" data-dec="1" data-suffix="M+">0</b><span>Campaign Views</span></div>
       <div class="v-scroll">SCROLL <i class="fa-solid fa-arrow-down"></i></div>
     </div>
   </div>
@@ -339,35 +388,34 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
 
 <!-- 03 SERVICES -->
 <section id="services">
-  <div class="reveal"><div class="eyebrow" style="justify-content:center">Our Services</div><h2 style="font-family:var(--serif);font-weight:400">End-to-End Influencer Marketing Solutions</h2></div>
+  <div class="reveal"><div class="eyebrow" style="justify-content:center">Our Services</div><h2 style="font-family:var(--serif);font-weight:400">End-to-End Influencer Marketing</h2></div>
   <div class="svc-wrap">
-    <button class="svc-arrow" id="svcPrev"><i class="fa-solid fa-chevron-left"></i></button>
-    <button class="svc-arrow" id="svcNext"><i class="fa-solid fa-chevron-right"></i></button>
+    <button class="svc-arrow" id="svcPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="svc-arrow" id="svcNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
     <div class="svc-track-outer" id="svcOuter"><div class="svc-track" id="svcTrack"></div></div>
-    <div class="swipe-hint">Swipe to explore — Drag or use arrows</div>
+    <div class="swipe-hint">Swipe to explore</div>
     <div style="margin-top:6px;font-size:11px;letter-spacing:.2em;opacity:.4">03 / 10</div>
   </div>
 </section>
 
 <!-- 04 CAMPAIGNS -->
 <section id="campaigns">
-  <div class="camp-grid">
-    <div class="reveal">
-      <div class="eyebrow" style="color:#111">Featured Campaigns</div>
-      <h2>Real Stories.<br>Real Results.</h2>
-      <p>From skincare to fashion, we create campaigns that people actually care about.</p><br>
-      <button class="btn-dark" onclick="openModal('campaigns')">View All Campaigns <i class="fa-solid fa-arrow-right"></i></button>
+  <div class="camp-head reveal">
+    <div>
+      <div class="eyebrow" style="color:#111">Selected Work</div>
+      <h2 style="font-family:var(--serif);font-weight:400">Real Stories.<br><em>Real Results.</em></h2>
     </div>
-    <div class="reveal">
-      <div class="tabs" id="campTabs"><button class="on" data-f="all">Beauty</button><button data-f="fashion">Fashion</button><button data-f="skincare">Skincare</button><button data-f="lifestyle">Lifestyle</button><button data-f="travel">Cosmetics</button></div>
-      <div class="camp-cards" id="campCards"></div>
-      <div style="display:flex;gap:10px;margin-top:16px;align-items:center">
-        <button class="btn-dark" id="campPrev" style="padding:10px 16px"><i class="fa-solid fa-arrow-left"></i></button>
-        <button class="btn-dark" id="campNext" style="padding:10px 16px"><i class="fa-solid fa-arrow-right"></i></button>
-        <span id="campCount" style="font-size:12px;opacity:.6;margin-left:auto">04 / 10</span>
+    <div>
+      <p style="font-size:14px;opacity:.7;line-height:1.6;margin-bottom:22px">Each campaign is built on creator authenticity, audience alignment and measurable outcomes.</p>
+      <div class="cs-tabs" id="csTabs">
+        <button class="on" data-cs="0">AXIS-Y</button>
+        <button data-cs="1">Pilgrim</button>
+        <button data-cs="2">Naturali</button>
       </div>
     </div>
   </div>
+  <div class="cs-display reveal" id="csDisplay"></div>
+  <div style="text-align:right;max-width:1320px;margin:16px auto 0;padding:0 34px;font-size:11px;letter-spacing:.2em;opacity:.4">04 / 10</div>
 </section>
 
 <!-- 05 CREATORS -->
@@ -375,16 +423,15 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
   <div class="cre-grid">
     <div class="reveal">
       <div class="eyebrow">Our Creators</div>
-      <h2>Meet the Right Creators for Your Brand.</h2>
-      <p style="font-size:13px;opacity:.6;line-height:1.7">From nano to macro, we have creators across every niche, style and audience.</p><br>
-      <button class="btn-light" onclick="document.getElementById('creators').scrollIntoView();toast('Creator roster unlocked — filter by niche');">Explore Creators <i class="fa-solid fa-arrow-right"></i></button>
-      <div style="margin-top:30px;display:flex;gap:12px">
-        <div style="background:#1a1815;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 16px;flex:1"><b style="font-family:var(--serif);font-size:22px">2.1M</b><br><span style="font-size:10px;opacity:.6">Avg. monthly reach</span></div>
-        <div style="background:#1a1815;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 16px;flex:1"><b style="font-family:var(--serif);font-size:22px">4.8%</b><br><span style="font-size:10px;opacity:.6">Avg. engagement</span></div>
+      <h2 style="font-family:var(--serif);font-weight:400">The Right Creator<br>for Your Brand.</h2>
+      <p style="font-size:13px;opacity:.6;line-height:1.7;margin-top:14px">We work with creators across beauty, skincare, lifestyle, haircare and wellness. Every creator is selected for content quality, audience trust and brand alignment.</p>
+      <div class="cre-ecosystem">
+        <div class="cre-ecosystem-num">40+</div>
+        <div class="cre-ecosystem-label">EXCLUSIVE<br>INFLUENCERS</div>
       </div>
     </div>
     <div class="reveal">
-      <div class="filters" id="creFilters"><button class="on" data-c="all">All</button><button data-c="beauty">Beauty</button><button data-c="fashion">Fashion</button><button data-c="lifestyle">Lifestyle</button><button data-c="fitness">Fitness</button><button data-c="travel">Travel</button><button data-c="food">Food</button></div>
+      <div class="filters" id="creFilters"><button class="on" data-c="all">All</button><button data-c="beauty">Beauty</button><button data-c="skincare">Skincare</button><button data-c="lifestyle">Lifestyle</button><button data-c="haircare">Haircare</button><button data-c="wellness">Wellness</button></div>
       <div class="coverflow" id="coverflow"></div>
       <div style="text-align:right;font-size:11px;letter-spacing:.2em;opacity:.4;margin-top:10px">05 / 10</div>
     </div>
@@ -393,27 +440,25 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
 
 <!-- 06 PROCESS -->
 <section id="process">
-  <div class="proc-head reveal"><div><div class="eyebrow">Our Process</div><h2>A Simple Process.<br>Powerful Results.</h2></div><p>We keep it transparent, collaborative and result-driven — from the first brief to the final report.</p></div>
-  <div class="proc-row" id="procRow">
-    <div id="procFill"></div>
-  </div>
+  <div class="proc-head reveal"><div><div class="eyebrow">Our Process</div><h2 style="font-family:var(--serif);font-weight:400">A Clear Process.<br>Powerful Results.</h2></div><p>Transparent and results-driven - from the first brief to the final campaign report.</p></div>
+  <div class="proc-row" id="procRow"><div id="procFill"></div></div>
   <div style="text-align:right;max-width:1320px;margin:20px auto 0;padding:0 34px;font-size:11px;letter-spacing:.2em;opacity:.4">06 / 10</div>
 </section>
 
 <!-- 07 BRANDS -->
 <section id="brands">
   <div class="brands-top reveal">
-    <div><div class="eyebrow">Trusted by Leading Brands</div><h2>Brands That Choose Us Again and Again.</h2></div>
+    <div><div class="eyebrow">Trusted by Brands</div><h2 style="font-family:var(--serif);font-weight:400">Brands That<br>Choose IWM.</h2></div>
     <div class="logo-grid">
-      <div><span style="font-size:10px;letter-spacing:.15em">THE BODY SHOP</span></div><div style="font-style:italic">NYKAA</div>
-      <div><span>L'OREAL <small style="font-size:9px">PARIS</small></span></div><div style="letter-spacing:.2em">SAMSUNG</div>
-      <div><i class="fa-solid fa-paw"></i> PUMA</div><div>TATA</div><div style="font-weight:400">boat</div><div style="font-weight:500">Google</div>
+      <div><span style="font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:.02em">AXIS-Y</span></div>
+      <div><span style="font-family:var(--sans);font-weight:800;letter-spacing:.14em;font-size:14px">PILGRIM</span></div>
+      <div><span style="font-family:var(--sans);font-weight:600;letter-spacing:.1em;font-size:14px">NATURALI</span></div>
     </div>
   </div>
   <div class="brands-bottom reveal">
-    <div class="bcard dark"><div class="over"><p style="font-family:var(--serif);font-size:18px;font-style:italic">“Amazing team, great creators and real results!”</p><small style="opacity:.6">— Brand Partner</small><div style="margin-top:12px;display:flex;gap:6px"><i class="fa-solid fa-star" style="color:var(--gold)"></i><i class="fa-solid fa-star" style="color:var(--gold)"></i><i class="fa-solid fa-star" style="color:var(--gold)"></i><i class="fa-solid fa-star" style="color:var(--gold)"></i><i class="fa-solid fa-star" style="color:var(--gold)"></i></div></div></div>
-    <div class="bcard"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=800&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop" style="left:50%;width:50%"></div>
-    <div class="bcard dark" style="text-align:center"><div class="over"><b style="font-family:var(--serif);font-size:28px">+300</b><br><span style="font-size:11px;opacity:.6">Successful Campaigns</span></div></div>
+    <div class="bcard dark"><div class="over"><p style="font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.55">"We are extremely impressed with the quality of creators IWM onboarded."</p><small style="opacity:.52;font-size:11px;display:block;margin-top:10px">- Marketing Team, Naturali</small><div style="margin-top:12px;display:flex;gap:6px"><i class="fa-solid fa-star" style="color:var(--gold)"></i><i class="fa-solid fa-star" style="color:var(--gold)"></i><i class="fa-solid fa-star" style="color:var(--gold)"></i><i class="fa-solid fa-star" style="color:var(--gold)"></i><i class="fa-solid fa-star" style="color:var(--gold)"></i></div></div></div>
+    <div class="bcard"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=800&auto=format&fit=crop" alt="" style="opacity:.85"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop" alt="" style="left:50%;width:50%;opacity:.85"></div>
+    <div class="bcard dark" style="text-align:center"><div class="over"><b style="font-family:var(--serif);font-size:34px">410</b><br><span style="font-size:11px;opacity:.55">Creators Activated</span><br><small style="font-size:10px;opacity:.4">Naturali Campaign</small></div></div>
   </div>
   <div style="text-align:right;max-width:1320px;margin:10px auto 0;padding:0 34px;font-size:11px;letter-spacing:.2em;opacity:.4">07 / 10</div>
 </section>
@@ -421,227 +466,254 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
 <!-- 08 PERFORMANCE -->
 <section id="performance">
   <div class="perf-grid">
-    <div class="reveal"><div class="eyebrow">Measurable Impact</div><h2>Data That Drives Decisions.</h2><p style="font-size:13px;opacity:.6;line-height:1.7">We track, analyse and optimise every campaign for maximum ROI.</p><br><button class="btn-light" onclick="toast('Full analytics report downloading...');">View Reports <i class="fa-solid fa-arrow-right"></i></button></div>
+    <div class="reveal">
+      <div class="eyebrow">Campaign Impact</div>
+      <h2 style="font-family:var(--serif);font-weight:400">Data That Drives Decisions.</h2>
+      <p style="font-size:13px;opacity:.6;line-height:1.7">We track, analyse and optimise every campaign - delivering transparent results from launch to final report.</p>
+      <div class="camp-metrics-grid">
+        <div class="camp-metric-box"><span class="val" data-count="1.51" data-dec="2" data-suffix="M+">0</span><span class="lbl">Naturali</span><span class="sub">Views</span></div>
+        <div class="camp-metric-box"><span class="val" data-count="1.03" data-dec="2" data-suffix="M+">0</span><span class="lbl">Pilgrim</span><span class="sub">Views</span></div>
+        <div class="camp-metric-box"><span class="val" data-count="313" data-suffix="K+">0</span><span class="lbl">AXIS-Y</span><span class="sub">Views</span></div>
+      </div>
+      <br><a href="#campaigns" class="btn-light">View Case Studies <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
     <div class="perf-mid reveal">
-      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop" style="position:absolute;inset:40px 60px;width:calc(100% - 120px);height:calc(100% - 80px);object-fit:cover;border-radius:20px;opacity:.5">
-      <div class="glass g1"><small style="opacity:.6;font-size:11px">Total Reach</small><b class="big" data-count="12.8" data-dec="1" data-suffix="M">0M</b><span class="up">↑ 42%</span></div>
-      <div class="glass g2"><small style="opacity:.6;font-size:11px">Engagement Rate</small><b style="font-size:24px">8.4%</b><canvas id="spark" height="70"></canvas></div>
-      <div class="glass g3"><small style="opacity:.6;font-size:11px">Conversions</small><b class="big" data-count="124" data-suffix="K">0K</b><span class="up">↑ 38%</span></div>
+      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop" style="position:absolute;inset:40px 60px;width:calc(100% - 120px);height:calc(100% - 80px);object-fit:cover;border-radius:20px;opacity:.5" alt="">
+      <div class="glass g1"><small style="opacity:.6;font-size:11px">Total Views</small><b class="big" data-count="2.8" data-dec="1" data-suffix="M+">0</b><span class="up">All documented campaigns</span></div>
+      <div class="glass g2"><small style="opacity:.6;font-size:11px">Best CPV Achieved</small><b style="font-size:28px;font-family:var(--serif)">Rs.0.08</b><canvas id="spark" height="70"></canvas></div>
+      <div class="glass g3"><small style="opacity:.6;font-size:11px">Creators Live</small><b class="big" data-count="410" data-suffix="">0</b><span class="up">Naturali campaign</span></div>
     </div>
     <div class="reveal">
-      <div class="soc-row"><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-youtube"></i><i class="fa-brands fa-linkedin"></i><i class="fa-brands fa-tiktok"></i></div>
+      <div class="soc-row"><i class="fa-brands fa-instagram"></i> <span style="font-size:12px;opacity:.6">@influencerwedsmarketing.in</span></div>
       <div class="perf-right" style="margin-top:12px">
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=400&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop" alt="">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" alt="">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop" alt="">
+        <img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=400&auto=format&fit=crop" alt="">
       </div>
-      <div style="background:#151310;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px;margin-top:10px"><small style="font-size:11px;opacity:.6">Weekly growth</small><canvas id="bars" height="90"></canvas></div>
+      <div style="background:#151310;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px;margin-top:10px"><small style="font-size:11px;opacity:.6">Campaign performance</small><canvas id="bars" height="90"></canvas></div>
       <div style="text-align:right;font-size:11px;letter-spacing:.2em;opacity:.4;margin-top:10px">08 / 10</div>
     </div>
   </div>
 </section>
 
-<!-- 09 CONTACT -->
-<section id="contact">
-  <div class="contact-grid">
-    <div class="reveal"><div class="brand"><b style="font-size:24px">IWM</b></div><div class="eyebrow" style="margin-top:10px">Let's Connect</div><h2>Let's Create Something Great.</h2><p style="font-size:12.5px;opacity:.6;line-height:1.7">Whether you're a brand looking for the right creators or a creator ready for new opportunities — we're here to help.</p><div class="cta-row"><button class="btn-dark" id="forBrand">For Brands <i class="fa-solid fa-arrow-right"></i></button><button class="btn-pill" id="forCreator" style="border-color:#111;color:#111;flex:1;justify-content:center">For Creators <i class="fa-solid fa-arrow-right"></i></button></div><div id="contactInfo" style="margin-top:18px;font-size:12px;opacity:.7;line-height:2"><i class="fa-solid fa-envelope"></i> hello@iwm.agency<br><i class="fa-solid fa-phone"></i> +91 98765 43210<br><i class="fa-solid fa-location-dot"></i> Bandra West, Mumbai</div></div>
-    <div class="mid-img reveal"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop"></div>
-    <div class="form-card reveal">
-      <div class="toggle-tabs"><button class="on" id="tabBrand">Brand</button><button id="tabCreator">Creator</button></div>
-      <form id="leadForm" novalidate>
-        <label>Your Name *</label><input id="fName" placeholder="Aarav Sharma">
-        <label>Email Address *</label><input id="fEmail" type="email" placeholder="you@brand.com">
-        <label>Select Service</label><select id="fService"><option>Influencer Marketing</option><option>Creator Management</option><option>Brand Campaigns</option><option>Social Media Strategy</option><option>Paid Ads</option><option>Reporting & Analytics</option></select>
-        <label>Message *</label><textarea id="fMsg" rows="3" placeholder="Tell us about your goals..."></textarea>
-        <button type="submit">Send Message <i class="fa-solid fa-arrow-right"></i></button>
-        <p id="formErr" style="font-size:11px;color:#b91c1c;margin-top:8px"></p>
-      </form>
-      <div style="text-align:right;font-size:11px;letter-spacing:.2em;opacity:.4;margin-top:10px">09 / 10</div>
+<!-- 09 TESTIMONIALS -->
+<section id="testimonials">
+  <div class="testi-head reveal">
+    <div class="eyebrow">Creator Stories</div>
+    <h2 style="font-family:var(--serif);font-weight:400">Words From the<br>People We Work With.</h2>
+  </div>
+  <div class="testi-slider-wrap reveal">
+    <div class="testi-track-outer" id="testiOuter"><div class="testi-track" id="testiTrack"></div></div>
+    <div class="testi-controls">
+      <button class="testi-btn" id="testiPrev" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i></button>
+      <button class="testi-btn" id="testiNext" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>
+      <div class="testi-dots" id="testiDots"></div>
+      <span style="font-size:11px;letter-spacing:.2em;opacity:.4;margin-left:auto">09 / 10</span>
     </div>
   </div>
 </section>
 
-<!-- 10 FOOTER -->
+<!-- 10 CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="brand"><b style="font-size:24px">IWM</b></div>
+      <div class="eyebrow" style="margin-top:10px">Let's Connect</div>
+      <h2 style="font-family:var(--serif);font-weight:400">Let's Create<br>Something Great.</h2>
+      <p style="font-size:12.5px;opacity:.6;line-height:1.7">Whether you are a brand looking for the right creators or a creator ready for new opportunities - we would love to hear from you.</p>
+      <div class="cta-row">
+        <button class="btn-dark" id="forBrand">For Brands <i class="fa-solid fa-arrow-right"></i></button>
+        <button class="btn-pill" id="forCreator" style="border-color:#111;color:#111;flex:1;justify-content:center">For Creators <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+      <div id="contactInfo" style="margin-top:20px;font-size:12.5px;opacity:.68;line-height:2.3">
+        <a href="mailto:Influencerwedsmarketing@gmail.com" style="display:flex;align-items:center;gap:9px;color:inherit"><i class="fa-solid fa-envelope"></i> Influencerwedsmarketing@gmail.com</a>
+        <a href="tel:+918770721703" style="display:flex;align-items:center;gap:9px;color:inherit"><i class="fa-solid fa-phone"></i> +91 87707 21703</a>
+        <a href="https://instagram.com/influencerwedsmarketing.in" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:9px;color:inherit"><i class="fa-brands fa-instagram"></i> @influencerwedsmarketing.in</a>
+      </div>
+    </div>
+    <div class="mid-img reveal"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop" alt="Creative collaboration"></div>
+    <div class="form-card reveal">
+      <div class="toggle-tabs"><button class="on" id="tabBrand">Brand</button><button id="tabCreator">Creator</button></div>
+      <form id="leadForm" novalidate>
+        <label>Your Name *</label><input id="fName" placeholder="Your name">
+        <label>Email Address *</label><input id="fEmail" type="email" placeholder="you@company.com">
+        <label>Select Service</label>
+        <select id="fService">
+          <option>Influencer Marketing</option><option>Creator Management</option>
+          <option>Brand Campaigns</option><option>Campaign Strategy</option><option>Performance Reporting</option>
+        </select>
+        <label>Message *</label><textarea id="fMsg" rows="3" placeholder="Tell us about your goals..."></textarea>
+        <button type="submit">Send Message <i class="fa-solid fa-arrow-right"></i></button>
+        <p id="formErr" style="font-size:11px;color:#b91c1c;margin-top:8px"></p>
+      </form>
+      <div style="text-align:right;font-size:11px;letter-spacing:.2em;opacity:.4;margin-top:10px">10 / 10</div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="foot-grid">
-    <div><div class="brand"><b>IWM</b><small>INFLUENCER WEDS MARKETING</small></div><p style="font-size:12px;opacity:.6;margin-top:12px;line-height:1.6">We connect brands with creators to build authentic stories and create lasting impact.</p><div class="socials"><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-youtube"></i></a><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-brands fa-x-twitter"></i></a><a href="#"><i class="fa-brands fa-tiktok"></i></a></div></div>
-    <div><h5>Quick Links</h5><ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#campaigns">Campaigns</a></li><li><a href="#creators">Creators</a></li><li><a href="#process">Process</a></li><li><a href="#contact">Let's Talk</a></li></ul></div>
-    <div><h5>Services</h5><ul><li><a href="#services">Influencer Marketing</a></li><li><a href="#services">Creator Management</a></li><li><a href="#services">Brand Campaigns</a></li><li><a href="#services">Social Media Strategy</a></li><li><a href="#services">Campaign Execution</a></li><li><a href="#services">Paid Ads</a></li><li><a href="#services">Reporting & Analytics</a></li></ul></div>
-    <div><h5>Join Our Newsletter</h5><p style="font-size:12px;opacity:.6">Get the latest updates, campaigns and creator stories.</p><div class="news-box"><input id="newsEmail" placeholder="Your email address"><button onclick="subscribe()"><i class="fa-solid fa-arrow-right"></i></button></div><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop" style="border-radius:12px;margin-top:14px;height:110px;width:100%;object-fit:cover;opacity:.8"></div>
+    <div>
+      <div class="brand"><b>IWM</b><small>INFLUENCER WEDS MARKETING</small></div>
+      <p style="font-size:12px;opacity:.6;margin-top:12px;line-height:1.6">We connect brands with creators to build authentic stories and create lasting impact. Founded 2023.</p>
+      <div class="socials">
+        <a href="https://instagram.com/influencerwedsmarketing.in" target="_blank" rel="noopener noreferrer" aria-label="IWM on Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div><h5>Quick Links</h5><ul>
+      <li><a href="#home">Home</a></li><li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li><li><a href="#campaigns">Work</a></li>
+      <li><a href="#creators">Creators</a></li><li><a href="#process">Process</a></li>
+      <li><a href="#testimonials">Stories</a></li><li><a href="#contact">Let's Talk</a></li>
+    </ul></div>
+    <div><h5>Services</h5><ul>
+      <li><a href="#services">Influencer Management</a></li>
+      <li><a href="#services">Campaign Strategy</a></li>
+      <li><a href="#services">Brand Partnerships</a></li>
+      <li><a href="#services">Campaign Execution</a></li>
+      <li><a href="#services">Performance Reporting</a></li>
+    </ul></div>
+    <div><h5>Get in Touch</h5>
+      <p style="font-size:12px;opacity:.6">Ready to start a campaign?</p>
+      <div class="news-box"><input id="newsEmail" placeholder="Your email" type="email"><button onclick="subscribe()"><i class="fa-solid fa-arrow-right"></i></button></div>
+      <div style="margin-top:14px;font-size:12px;opacity:.58;line-height:2.1">
+        <a href="mailto:Influencerwedsmarketing@gmail.com" style="color:inherit;display:block">Influencerwedsmarketing@gmail.com</a>
+        <a href="tel:+918770721703" style="color:inherit;display:block">+91 87707 21703</a>
+      </div>
+    </div>
   </div>
-  <div class="copy"><span>© 2025 IWM. All rights reserved.</span><span>10 / 10 — Crafted with influence</span></div>
+  <div class="copy"><span>2025 IWM - Influencer Weds Marketing. All rights reserved.</span><span>Crafted with influence</span></div>
 </footer>
 
-<div id="modal"><div class="modal-box"><img class="top" id="mImg" src=""><div class="modal-pad"><div style="display:flex;justify-content:space-between;align-items:center"><h3 id="mTitle" style="font-family:var(--serif);font-size:32px"></h3><button onclick="closeModal()" style="border:1px solid #111;border-radius:50%;width:36px;height:36px;background:none"><i class="fa-solid fa-xmark"></i></button></div><p id="mBody" style="font-size:14px;line-height:1.7;opacity:.7;margin-top:10px"></p><div id="mExtra" style="margin-top:16px"></div><button class="btn-dark" style="margin-top:18px" onclick="closeModal();document.getElementById('contact').scrollIntoView()">Start a Project <i class="fa-solid fa-arrow-right"></i></button></div></div></div>
-<div id="toast"></div>
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <img class="top" id="mImg" src="" alt="">
+    <div class="modal-pad">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3 id="mTitle" style="font-family:var(--serif);font-size:32px"></h3>
+        <button onclick="closeModal()" style="border:1px solid #111;border-radius:50%;width:36px;height:36px;background:none" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <p id="mBody" style="font-size:14px;line-height:1.7;opacity:.7;margin-top:10px"></p>
+      <div id="mExtra" style="margin-top:16px"></div>
+      <button class="btn-dark" style="margin-top:18px" onclick="closeModal();document.getElementById('contact').scrollIntoView()">Start a Project <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+</div>
+<div id="toast" role="status"></div>
 
 <script>
-// Preloader
-let lp=0; let li=setInterval(()=>{lp+=Math.random()*22; if(lp>=100){lp=100;clearInterval(li); setTimeout(()=>document.getElementById('preloader').classList.add('hide'),400)} document.getElementById('loadFill').style.width=lp+'%';},180);
-
-// Header + progress + spy
-const header=document.getElementById('header');
-const sections=['home','about','services','campaigns','creators','process','brands','performance','contact'];
-window.addEventListener('scroll',()=>{
-  const y=scrollY;
+var lp=0,li=setInterval(function(){lp+=Math.random()*22;if(lp>=100){lp=100;clearInterval(li);setTimeout(function(){document.getElementById('preloader').classList.add('hide');},400);}document.getElementById('loadFill').style.width=lp+'%';},180);
+var header=document.getElementById('header');
+var sections=['home','about','services','campaigns','creators','process','brands','performance','testimonials','contact'];
+window.addEventListener('scroll',function(){
+  var y=scrollY;
   header.classList.toggle('scrolled',y>40);
-  const light=['campaigns','process','brands','contact'].some(id=>{const el=document.getElementById(id); if(!el) return false; const r=el.getBoundingClientRect(); return r.top<80 && r.bottom>80});
-  header.classList.toggle('light',light && y>40);
+  var light=['campaigns','process','brands','contact'].some(function(id){var el=document.getElementById(id);if(!el)return false;var r=el.getBoundingClientRect();return r.top<80&&r.bottom>80;});
+  header.classList.toggle('light',light&&y>40);
   document.getElementById('pageInd').classList.toggle('light',light);
-  const h=document.documentElement.scrollHeight-innerHeight;
+  var h=document.documentElement.scrollHeight-innerHeight;
   document.getElementById('progressTop').style.width=(y/h*100)+'%';
-  let cur=0; sections.forEach((id,i)=>{const el=document.getElementById(id); if(el && el.getBoundingClientRect().top<innerHeight/2) cur=i;});
-  document.getElementById('pageInd').textContent=String(cur+1).padStart(2,'0')+' / 10';
-  document.querySelectorAll('#deskNav a').forEach((a,i)=>a.classList.toggle('active',sections[i+1]===sections[cur]));
-  // hero parallax
-  document.getElementById('heroImg').style.transform=`translateY(${y*0.18}px) scale(${1+y*0.0002})`;
-  // process fill
-  const pr=document.getElementById('procRow'); if(pr){const r=pr.getBoundingClientRect(); const p=Math.min(1,Math.max(0,(innerHeight*0.7-r.top)/r.height)); document.getElementById('procFill').style.width=(p*84)+'%';}
+  var cur=0;sections.forEach(function(id,i){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<innerHeight/2)cur=i;});
+  document.getElementById('pageInd').textContent=String(cur+1).padStart(2,'0')+' / '+sections.length;
+  document.querySelectorAll('#deskNav a').forEach(function(a,i){a.classList.toggle('active',sections[i+1]===sections[cur]);});
+  document.getElementById('heroImg').style.transform='translateY('+y*0.18+'px) scale('+(1+y*0.0002)+')';
+  var pr=document.getElementById('procRow');if(pr){var r=pr.getBoundingClientRect();var p=Math.min(1,Math.max(0,(innerHeight*0.7-r.top)/r.height));document.getElementById('procFill').style.width=(p*84)+'%';}
 },{passive:true});
-
-// Mobile
-document.getElementById('hamb').onclick=()=>document.getElementById('mobileMenu').classList.add('open');
-document.getElementById('closeMenu').onclick=()=>document.getElementById('mobileMenu').classList.remove('open');
-document.querySelectorAll('#mobileMenu a').forEach(a=>a.onclick=()=>document.getElementById('mobileMenu').classList.remove('open'));
-
-// Reveal
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// Counters
-const cio=new IntersectionObserver(es=>es.forEach(e=>{
-  if(!e.isIntersecting) return; const el=e.target; cio.unobserve(el);
-  const target=parseFloat(el.dataset.count); const dec=parseInt(el.dataset.dec||0); const suf=el.dataset.suffix||'';
-  let s=null; const t0=performance.now();
-  function tick(t){const p=Math.min(1,(t-t0)/1600); const v=target*(1-Math.pow(1-p,3)); el.textContent=v.toFixed(dec)+suf; if(p<1) requestAnimationFrame(tick);} requestAnimationFrame(tick);
-}),{threshold:.5});
-document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
-
-// Hero tilt floats
-const hv=document.getElementById('heroVisual');
-document.getElementById('home').addEventListener('mousemove',e=>{
-  const x=(e.clientX/innerWidth-.5), y=(e.clientY/innerHeight-.5);
-  document.querySelectorAll('.float').forEach((f,i)=>{f.style.transform=`translate(${x*(20+i*8)}px, ${y*(18+i*6)}px) rotate(${(i-1)*4}deg)`;});
+document.getElementById('hamb').onclick=function(){document.getElementById('mobileMenu').classList.add('open');};
+document.getElementById('closeMenu').onclick=function(){document.getElementById('mobileMenu').classList.remove('open');};
+document.querySelectorAll('#mobileMenu a').forEach(function(a){a.onclick=function(){document.getElementById('mobileMenu').classList.remove('open');};});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+var cio=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(!e.isIntersecting)return;var el=e.target;cio.unobserve(el);
+  var target=parseFloat(el.dataset.count),dec=parseInt(el.dataset.dec||0),suf=el.dataset.suffix||'',t0=performance.now();
+  function tick(t){var p=Math.min(1,(t-t0)/1600),v=target*(1-Math.pow(1-p,3));el.textContent=v.toFixed(dec)+suf;if(p<1)requestAnimationFrame(tick);}requestAnimationFrame(tick);
+});},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);});
+document.getElementById('home').addEventListener('mousemove',function(e){
+  var x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);
+  document.querySelectorAll('.float').forEach(function(f,i){f.style.transform='translate('+(x*(20+i*8))+'px,'+(y*(18+i*6))+'px) rotate('+((i-1)*4)+'deg)';});
 });
-
-// SERVICES data
-const svcData=[
- {t:'Influencer Marketing',img:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop'},
- {t:'Creator Management',img:'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=400&auto=format&fit=crop'},
- {t:'Brand Campaigns',img:'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400&auto=format&fit=crop'},
- {t:'Social Media Strategy',img:'https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=400&auto=format&fit=crop'},
- {t:'Campaign Execution',img:'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=400&auto=format&fit=crop'},
- {t:'Paid Ads',img:'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop'},
- {t:'Reporting & Analytics',img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop'},
+var svcData=[
+ {t:'Influencer Management',d:'Creator selection, relationship management, coordination and campaign execution.',img:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop'},
+ {t:'Campaign Strategy',d:'Creator matching, content strategy, campaign planning and authentic storytelling.',img:'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop'},
+ {t:'Brand Partnerships',d:'Brand requirement understanding, deal acquisition, negotiation and coordination.',img:'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400&auto=format&fit=crop'},
+ {t:'Campaign Execution',d:'Calendars, trackers, deliverables, payment coordination and seamless execution.',img:'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=400&auto=format&fit=crop'},
+ {t:'Performance and Reporting',d:'Campaign tracking, analytics, optimisation and transparent reporting.',img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop'},
 ];
-const svcTrack=document.getElementById('svcTrack');
-function renderSvc(){svcTrack.innerHTML=svcData.map((s,i)=>`<div class="svc ${i===2?'active':''}" data-i="${i}"><img src="${s.img}"><div class="svc-body"><i>SERVICE</i><h4>${s.t}</h4></div><div class="svc-num">0${i+1}</div></div>`).join('');
- svcTrack.querySelectorAll('.svc').forEach(c=>c.onclick=()=>{setSvcActive(parseInt(c.dataset.i)); openModal('service',svcData[c.dataset.i].t);});}
-let svcIdx=2;
-function setSvcActive(i){svcIdx=(i+svcData.length)%svcData.length; svcTrack.querySelectorAll('.svc').forEach((el,k)=>el.classList.toggle('active',k===svcIdx)); updateSvc();}
-function updateSvc(){const cardW=208; const outer=document.getElementById('svcOuter').clientWidth; let x=(outer/2 - cardW/2) - svcIdx*cardW; svcTrack.style.transform=`translateX(${x}px)`;}
-renderSvc(); updateSvc(); window.addEventListener('resize',updateSvc);
-document.getElementById('svcNext').onclick=()=>setSvcActive(svcIdx+1);
-document.getElementById('svcPrev').onclick=()=>setSvcActive(svcIdx-1);
-// drag
-let drag=false,sx=0,curX=0;
-const outer=document.getElementById('svcOuter');
-outer.addEventListener('pointerdown',e=>{drag=true;sx=e.clientX;outer.setPointerCapture(e.pointerId);outer.style.cursor='grabbing';});
-outer.addEventListener('pointermove',e=>{if(!drag)return; const dx=e.clientX-sx; if(Math.abs(dx)>50){setSvcActive(svcIdx+(dx<0?1:-1)); sx=e.clientX;}});
-['pointerup','pointerleave'].forEach(ev=>outer.addEventListener(ev,()=>{drag=false;outer.style.cursor='grab';}));
-
-// CAMPAIGNS
-const campData=[
- {cat:'skincare',tag:'Skincare Brand',title:'Glow Naturally',img:'https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=700&auto=format&fit=crop',reach:'2.4M',eng:'18%',conv:'+220%'},
- {cat:'fashion',tag:'Fashion Label',title:'Street Muse',img:'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=700&auto=format&fit=crop',reach:'3.1M',eng:'12%',conv:'+180%'},
- {cat:'lifestyle',tag:'Lifestyle',title:'Desert Dream',img:'https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=700&auto=format&fit=crop',reach:'5.2M',eng:'9.4%',conv:'+145%'},
- {cat:'travel',tag:'Cosmetics',title:'Velvet Hour',img:'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=700&auto=format&fit=crop',reach:'1.8M',eng:'21%',conv:'+310%'},
+var svcTrack=document.getElementById('svcTrack'),svcIdx=2;
+function renderSvc(){svcTrack.innerHTML=svcData.map(function(s,i){return '<div class="svc '+(i===2?'active':'')+'" data-i="'+i+'"><img src="'+s.img+'" alt="'+s.t+'"><div class="svc-body"><i>SERVICE 0'+(i+1)+'</i><h4>'+s.t+'</h4><p>'+s.d+'</p></div><div class="svc-num">0'+(i+1)+'</div></div>';}).join('');svcTrack.querySelectorAll('.svc').forEach(function(c){c.onclick=function(){var i=parseInt(c.dataset.i);setSvcActive(i);openModal('service',svcData[i].t,svcData[i].d);};});}
+function setSvcActive(i){svcIdx=(i+svcData.length)%svcData.length;svcTrack.querySelectorAll('.svc').forEach(function(el,k){el.classList.toggle('active',k===svcIdx);});updateSvc();}
+function updateSvc(){var cW=248,outer=document.getElementById('svcOuter').clientWidth,x=(outer/2-cW/2)-svcIdx*cW;svcTrack.style.transform='translateX('+x+'px)';}
+renderSvc();updateSvc();window.addEventListener('resize',updateSvc);
+document.getElementById('svcNext').onclick=function(){setSvcActive(svcIdx+1);};
+document.getElementById('svcPrev').onclick=function(){setSvcActive(svcIdx-1);};
+var drag=false,sx=0,outerEl=document.getElementById('svcOuter');
+outerEl.addEventListener('pointerdown',function(e){drag=true;sx=e.clientX;outerEl.setPointerCapture(e.pointerId);outerEl.style.cursor='grabbing';});
+outerEl.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-sx;if(Math.abs(dx)>50){setSvcActive(svcIdx+(dx<0?1:-1));sx=e.clientX;}});
+['pointerup','pointerleave'].forEach(function(ev){outerEl.addEventListener(ev,function(){drag=false;outerEl.style.cursor='grab';});});
+var csData=[
+  {brand:'IWM x AXIS-Y',idx:'01',obj:'Brand Awareness - Pan India. Vegan Collagen Eye Serum.',strategy:['Selected skincare and beauty creators across India','Prioritised authentic product usage and demonstration','Focused on texture, application and visible effects','Used creator storytelling to build audience trust'],img:'https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=900&auto=format&fit=crop',metrics:[{v:'313K+',l:'Views'},{v:'11',l:'Creators'},{v:'Rs.0.56',l:'CPV'}],deliverables:'11 Instagram Reels and 11 Stories with CTA.',outcome:'2,699 Likes, 423 Comments, 699 Shares across 11 creator posts.',quote:{text:'The IWM team selected creators who really understood the product and our brand voice. Loved the campaign quality and results.',src:'Marketing Lead, AXIS-Y'}},
+  {brand:'IWM x Pilgrim',idx:'02',obj:'Product education and brand awareness campaign.',strategy:['Creators matched based on content style and skin concerns','Prioritised audience relevance and genuine product fit','Focused on product education through creator narratives','Built trust through honest, experience-led content'],img:'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=900&auto=format&fit=crop',metrics:[{v:'1.03M+',l:'Views'},{v:'5',l:'Creators'},{v:'Rs.0.19',l:'CPV'}],deliverables:'Instagram Reels and Stories across 5 creators.',outcome:'12,703 Likes, 395 Comments, 577 Shares. High engagement through product-first storytelling.',quote:{text:'',src:''}},
+  {brand:'IWM x Naturali',idx:'03',obj:'Promote sunscreen, haircare and body-care through authentic creator content suitable for advertising.',strategy:['Sunscreen texture, finish and everyday wear content','Scalp care, anti-dandruff and anti-hair-fall storytelling','Body scrub demonstrations and ingredient education','Natural lifestyle content aligned to brand values'],img:'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=900&auto=format&fit=crop',metrics:[{v:'1.51M+',l:'Views'},{v:'410',l:'Creators'},{v:'Rs.0.08',l:'CPV'}],deliverables:'410 Reels, 410 Stories, 410 Reel Reshares. Campaign launched April 1, 2025.',outcome:'Campaign expanded from 200 to 500 planned creators due to performance. Naturali continued monthly activations with IWM.',quote:{text:"We are extremely impressed with the quality of creators IWM onboarded. Their understanding of our content requirements and ad goals was spot on. We're continuing monthly campaigns based on their performance.",src:'Marketing Team, Naturali'}}
 ];
-let campI=0, campF='all';
-function renderCamp(){
-  const list=campF==='all'?campData:campData.filter(c=>c.cat===campF);
-  if(!list.length){document.getElementById('campCards').innerHTML='<p style="opacity:.6">No campaigns in this filter yet.</p>';return;}
-  campI=campI%list.length;
-  const main=list[campI], next=list[(campI+1)%list.length];
-  document.getElementById('campCards').innerHTML=`
-   <div class="ccard main"><img src="${main.img}"><div class="ccard-body"><span style="font-size:10px;background:#fff;color:#111;border-radius:100px;padding:4px 10px">${main.tag}</span><h3>${main.title}</h3><div class="metrics"><div><b>${main.reach}</b><span>Reach</span></div><div><b>${main.eng}</b><span>Engagement</span></div><div><b>${main.conv}</b><span>Conversions</span></div></div></div></div>
-   <div class="ccard side"><img src="${next.img}"><div class="ccard-body"><h3 style="font-size:20px">${next.title}</h3><span style="font-size:11px;opacity:.7">View case →</span></div></div>`;
-}
-renderCamp();
-document.querySelectorAll('#campTabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#campTabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');campF=b.dataset.f;campI=0;renderCamp();});
-document.getElementById('campNext').onclick=()=>{campI++;renderCamp();};
-document.getElementById('campPrev').onclick=()=>{campI--;if(campI<0)campI=campData.length-1;renderCamp();};
-
-// CREATORS
-const creators=[
- {n:'Aisha Sharma',c:'beauty',f:'1.2M',img:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&auto=format&fit=crop',bio:'Beauty & skincare storyteller.'},
- {n:'Rohan Mehta',c:'fashion',f:'890K',img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&auto=format&fit=crop',bio:'Menswear & street style.'},
- {n:'Ananya Iyer',c:'lifestyle',f:'2.4M',img:'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=500&auto=format&fit=crop',bio:'Lifestyle & travel diaries.'},
- {n:'Kabir Singh',c:'fitness',f:'640K',img:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500&auto=format&fit=crop',bio:'Fitness & nutrition coach.'},
- {n:'Myra Kapoor',c:'travel',f:'1.8M',img:'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=500&auto=format&fit=crop',bio:'Travel & fashion muse.'},
- {n:'Sara Ali',c:'food',f:'950K',img:'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=500&auto=format&fit=crop',bio:'Food & home recipes.'},
- {n:'Dev Patel',c:'fashion',f:'720K',img:'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&auto=format&fit=crop',bio:'Editorial fashion creator.'},
+var csIdx=0;
+function renderCS(){var cs=csData[csIdx];var qb=cs.quote.text?'<div class="cs-quote"><p>'+cs.quote.text+'</p><cite>- '+cs.quote.src+'</cite></div>':'';document.getElementById('csDisplay').innerHTML='<div class="cs-layout"><div class="cs-left"><div><div class="cs-index">Case Study '+cs.idx+'</div><div class="cs-brand-name">'+cs.brand+'</div><p class="cs-objective">'+cs.obj+'</p><div class="cs-strategy"><h5>Strategy</h5><ul>'+cs.strategy.map(function(s){return '<li>'+s+'</li>';}).join('')+'</ul></div><p class="cs-deliverables">'+cs.deliverables+'</p></div>'+qb+'</div><div class="cs-right"><div class="cs-image"><img src="'+cs.img+'" alt="'+cs.brand+'"></div><div class="cs-metrics">'+cs.metrics.map(function(m){return '<div class="cs-metric"><span class="cs-metric-val">'+m.v+'</span><span class="cs-metric-label">'+m.l+'</span></div>';}).join('')+'</div><div class="cs-outcome"><p>'+cs.outcome+'</p></div></div></div>';}
+renderCS();
+document.querySelectorAll('#csTabs button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#csTabs button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');csIdx=parseInt(b.dataset.cs);renderCS();};});
+var creators=[
+ {n:'Skincare Creator',c:'skincare',img:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&auto=format&fit=crop',bio:'Skincare and beauty content creator with an engaged niche audience.'},
+ {n:'Beauty Creator',c:'beauty',img:'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=500&auto=format&fit=crop',bio:'Beauty and lifestyle content with authentic storytelling.'},
+ {n:'Lifestyle Creator',c:'lifestyle',img:'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=500&auto=format&fit=crop',bio:'Everyday lifestyle and product integration creator.'},
+ {n:'Haircare Creator',c:'haircare',img:'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=500&auto=format&fit=crop',bio:'Haircare, scalp health and beauty educator.'},
+ {n:'Wellness Creator',c:'wellness',img:'https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=500&auto=format&fit=crop',bio:'Wellness, self-care and daily routine content.'},
+ {n:'Beauty Creator',c:'beauty',img:'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&auto=format&fit=crop',bio:'Beauty review and tutorial creator.'},
+ {n:'Skincare Creator',c:'skincare',img:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500&auto=format&fit=crop',bio:'Skincare routine and ingredient education creator.'},
 ];
-let creF='all';
-function renderCre(){
-  const list=creF==='all'?creators.slice(0,5):creators.filter(c=>c.c===creF);
-  const show=(list.length?list:creators.slice(0,5)).slice(0,5);
-  const pos=['left2','left1','center','right1','right2'];
-  document.getElementById('coverflow').innerHTML=show.map((c,i)=>`<div class="crf ${pos[i]||''}" onclick="openCreator(${creators.indexOf(c)})"><img src="${c.img}"><div class="crf-info"><b>${c.n}</b><span>${c.c} • ${c.f} followers</span></div></div>`).join('');
-}
+var creF='all';
+function renderCre(){var list=creF==='all'?creators.slice(0,5):creators.filter(function(c){return c.c===creF;});var show=(list.length?list:creators.slice(0,5)).slice(0,5);var pos=['left2','left1','center','right1','right2'];document.getElementById('coverflow').innerHTML=show.map(function(c,i){return '<div class="crf '+(pos[i]||'')+'" onclick="openCreator('+creators.indexOf(c)+')"><img src="'+c.img+'" alt="'+c.n+'"><div class="crf-info"><b>'+c.n+'</b><span>'+c.c+'</span></div></div>';}).join('');}
 renderCre();
-document.querySelectorAll('#creFilters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#creFilters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');creF=b.dataset.c;renderCre();});
-function openCreator(i){const c=creators[i]; document.getElementById('mImg').src=c.img; document.getElementById('mTitle').textContent=c.n; document.getElementById('mBody').textContent=c.bio+' Trusted for authentic storytelling, high retention reels and convert-first content. Avg. engagement 5.2%, audience 18-34.'; document.getElementById('mExtra').innerHTML=`<div style="display:flex;gap:10px"><span style="background:#111;color:#fff;border-radius:100px;padding:6px 14px;font-size:12px">${c.f} followers</span><span style="border:1px solid #111;border-radius:100px;padding:6px 14px;font-size:12px">${c.c}</span></div>`; document.getElementById('modal').classList.add('open');}
-
-// PROCESS
-const steps=[
- {t:'Brand Brief',d:'Understand your goals, audience & vision.',img:'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=400&auto=format&fit=crop'},
- {t:'Strategy',d:'Plan the right creators & approach.',img:'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop'},
- {t:'Creator Selection',d:'Shortlist the best fit talent.',img:'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=400&auto=format&fit=crop'},
- {t:'Execution',d:'Create, collaborate, bring it to life.',img:'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=400&auto=format&fit=crop'},
- {t:'Reporting & Growth',d:'Measure, optimise, scale.',img:'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=400&auto=format&fit=crop'},
+document.querySelectorAll('#creFilters button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#creFilters button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');creF=b.dataset.c;renderCre();};});
+function openCreator(i){var c=creators[i];document.getElementById('mImg').src=c.img;document.getElementById('mTitle').textContent=c.n;document.getElementById('mBody').textContent=c.bio+' Part of the IWM creator network - selected for content quality, audience trust and brand alignment.';document.getElementById('mExtra').innerHTML='<div style="display:flex;gap:10px"><span style="background:#111;color:#fff;border-radius:100px;padding:6px 14px;font-size:12px">'+c.c+'</span></div>';document.getElementById('modal').classList.add('open');}
+var steps=[
+ {t:'Understand',d:'Brand requirements, campaign goals and audience definition.',img:'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=400&auto=format&fit=crop'},
+ {t:'Strategize',d:'Audience, creator and content strategy aligned to objectives.',img:'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop'},
+ {t:'Curate',d:'Relevant creators selected based on content quality and audience fit.',img:'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=400&auto=format&fit=crop'},
+ {t:'Execute',d:'Briefing, coordination, content delivery and campaign management.',img:'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=400&auto=format&fit=crop'},
+ {t:'Track',d:'Performance monitoring, reporting and optimisation.',img:'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=400&auto=format&fit=crop'},
 ];
-document.getElementById('procRow').innerHTML='<div id="procFill"></div>'+steps.map((s,i)=>`<div class="pstep reveal in"><div class="circ"><img src="${s.img}"></div><b class="num">0${i+1}</b><h4>${s.t}</h4><p>${s.d}</p></div>`).join('');
-
-// Charts
-new Chart(document.getElementById('spark'),{type:'line',data:{labels:[1,2,3,4,5,6,7,8],datasets:[{data:[2,4,3,6,5,8,7,10],borderColor:'#fff',borderWidth:2,pointRadius:0,tension:.4,fill:true,backgroundColor:'rgba(255,255,255,.12)'}]},options:{plugins:{legend:{display:false}},scales:{x:{display:false},y:{display:false}},animation:{duration:2000}}});
-new Chart(document.getElementById('bars'),{type:'bar',data:{labels:['M','T','W','T','F','S','S'],datasets:[{data:[40,65,50,80,60,90,75],backgroundColor:['#ffffff33','#ffffff55','#ffffff33','#c8a86a','#ffffff55','#fff','#ffffff66'],borderRadius:4}]},options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{color:'#888',font:{size:9}}},y:{display:false}}}});
-
-// Modals
-function openModal(type,extra){
-  const m=document.getElementById('modal');
-  if(type==='story'){document.getElementById('mImg').src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop';document.getElementById('mTitle').textContent='Our Story';document.getElementById('mBody').textContent='Founded by creators, for creators. IWM started in Mumbai with one belief — influence without trust is just noise. Today we manage 500+ creators, partner with 100+ brands and drive 5M+ real human connections every month through scroll-stopping, story-first campaigns.';document.getElementById('mExtra').innerHTML='';}
-  else if(type==='service'){document.getElementById('mImg').src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop';document.getElementById('mTitle').textContent=extra;document.getElementById('mBody').textContent='Full-funnel execution: discovery, contracting, creative direction, whitelisting, paid amplification and transparent ROI reporting. Average +180% lift in engagement within 60 days.';document.getElementById('mExtra').innerHTML='';}
-  else if(type==='campaigns'){document.getElementById('mImg').src='https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=800&auto=format&fit=crop';document.getElementById('mTitle').textContent='All Campaigns';document.getElementById('mBody').textContent='300+ campaigns across beauty, fashion, lifestyle, D2C and tech. Filter by objective — awareness, UGC, sales — and see real dashboards.';document.getElementById('mExtra').innerHTML=campData.map(c=>`<div style="display:flex;gap:12px;align-items:center;margin-bottom:10px;background:#fff;border-radius:12px;padding:8px"><img src="${c.img}" style="width:56px;height:56px;border-radius:10px;object-fit:cover"><div><b style="font-size:13px">${c.title}</b><br><small style="opacity:.6">${c.reach} reach • ${c.eng} eng</small></div></div>`).join('');}
-  m.classList.add('open');
-}
+document.getElementById('procRow').innerHTML='<div id="procFill"></div>'+steps.map(function(s,i){return '<div class="pstep reveal in"><div class="circ"><img src="'+s.img+'" alt="'+s.t+'"></div><b class="num">0'+(i+1)+'</b><h4>'+s.t+'</h4><p>'+s.d+'</p></div>';}).join('');
+new Chart(document.getElementById('spark'),{type:'line',data:{labels:[1,2,3,4,5,6,7,8],datasets:[{data:[2,4,3,6,5,8,7,10],borderColor:'#c8a86a',borderWidth:2,pointRadius:0,tension:.4,fill:true,backgroundColor:'rgba(200,168,106,.12)'}]},options:{plugins:{legend:{display:false}},scales:{x:{display:false},y:{display:false}},animation:{duration:2000}}});
+new Chart(document.getElementById('bars'),{type:'bar',data:{labels:['W1','W2','W3','W4','W5','W6','W7'],datasets:[{data:[40,65,50,80,60,90,75],backgroundColor:['#ffffff33','#ffffff55','#ffffff33','#c8a86a','#ffffff55','#fff','#ffffff66'],borderRadius:4}]},options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{color:'#888',font:{size:9}}},y:{display:false}}}});
+var testiData=[
+  {text:"I've worked with quite a few brands and agencies, and most of the time follow-up after a campaign can feel pressured. But working with IWM has been completely different. Tuba has always been so approachable, responsive and understanding with all my queries. Deepika has continued the same energy - calm, respectful and never pushy. What I really appreciate is how smooth everything feels: clear communication, no unnecessary pressure and an overall positive way of working.",src:"Creator Feedback"},
+  {text:"I would like to sincerely appreciate the excellent work in creation and maintenance of the content calendar and overall coordination. Over three months of working with the team, they have consistently shown dedication, strong organisation and clear communication. They regularly share follow-ups, bring quality content ideas and maintain a smooth workflow. Their hard work truly contributes to the growth of my content.",src:"Creator Feedback"},
+  {text:"I would genuinely like to highlight the incredible work Charu and Deepika have been doing. Charu always comes through with timely suggestions, creative content ideas and constant support. Deepika consistently brings in great collaboration opportunities and connects me with valuable deals. Love the way IWM is working as my partner in the content journey.",src:"Creator Feedback"},
+  {text:"Love working with your agency. The whole process was so smooth and easygoing. You are doing great work by making brand collaboration so accessible for small creators.",src:"Creator Feedback"},
+  {text:"It was wonderful working with you. Looking forward to more opportunities.",src:"Creator Feedback"},
+  {text:"I have received the payment. It was truly lovely working with you and I really enjoyed our collaboration. Everything went smoothly and I hope we get the opportunity to work together again in the future.",src:"Creator Feedback"},
+];
+var testiIdx=0;
+function visiblePerView(){return window.innerWidth<=768?1:2;}
+function renderTesti(){var perView=visiblePerView(),track=document.getElementById('testiTrack');track.innerHTML=testiData.map(function(t){return '<div class="tcard"><div class="tcard-ql">"</div><p>'+t.text+'</p><div class="tcard-source"><div class="tcard-avatar">C</div><div class="tcard-name">'+t.src+'</div></div></div>';}).join('');updateTestiPos(false);var pages=Math.ceil(testiData.length/perView);document.getElementById('testiDots').innerHTML=Array.from({length:pages},function(_,i){return '<div class="testi-dot '+(i===Math.floor(testiIdx/perView)?'on':'')+'" onclick="goTesti('+(i*perView)+')"></div>';}).join('');}
+function updateTestiPos(anim){if(anim===undefined)anim=true;var perView=visiblePerView(),gap=24,outer=document.getElementById('testiOuter'),cardW=(outer.clientWidth-(perView-1)*gap)/perView;document.querySelectorAll('.tcard').forEach(function(c){c.style.flex='0 0 '+cardW+'px';});var offset=testiIdx*(cardW+gap),track=document.getElementById('testiTrack');if(!anim){track.style.transition='none';}else{track.style.transition='transform .65s cubic-bezier(.2,.7,.2,1)';}track.style.transform='translateX(-'+offset+'px)';setTimeout(function(){track.style.transition='transform .65s cubic-bezier(.2,.7,.2,1)';},10);document.querySelectorAll('.testi-dot').forEach(function(d,i){d.classList.toggle('on',i===Math.floor(testiIdx/perView));});}
+function goTesti(i){var perView=visiblePerView(),maxI=testiData.length-perView;testiIdx=Math.max(0,Math.min(i,maxI));updateTestiPos(true);}
+document.getElementById('testiNext').onclick=function(){goTesti(testiIdx+visiblePerView());};
+document.getElementById('testiPrev').onclick=function(){goTesti(testiIdx-visiblePerView());};
+renderTesti();window.addEventListener('resize',function(){testiIdx=0;renderTesti();});
+function openModal(type,extra,desc){var m=document.getElementById('modal');if(type==='story'){document.getElementById('mImg').src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop';document.getElementById('mTitle').textContent='Our Story';document.getElementById('mBody').textContent='IWM - Influencer Weds Marketing - is a team of creatives, strategists and digital experts helping brands build meaningful connections through creator-led storytelling and performance-focused influencer campaigns. Founded in 2023, IWM believes influence without authenticity is just noise.';document.getElementById('mExtra').innerHTML='';}else if(type==='service'){document.getElementById('mImg').src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop';document.getElementById('mTitle').textContent=extra;document.getElementById('mBody').textContent=desc||'Full-service delivery: creator discovery, briefing, campaign management, content coordination, tracking and reporting.';document.getElementById('mExtra').innerHTML='';}m.classList.add('open');}
 function closeModal(){document.getElementById('modal').classList.remove('open');}
-document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});
-
-// Forms
-let mode='brand';
-const tabB=document.getElementById('tabBrand'), tabC=document.getElementById('tabCreator');
-function setMode(m){mode=m;tabB.classList.toggle('on',m==='brand');tabC.classList.toggle('on',m==='creator');
- document.getElementById('forBrand').style.background=m==='brand'?'#111':'transparent';document.getElementById('forBrand').style.color=m==='brand'?'#fff':'#111';
- document.getElementById('fService').innerHTML=m==='brand'?'<option>Influencer Marketing</option><option>Brand Campaigns</option><option>Paid Ads</option><option>Reporting & Analytics</option>':'<option>Join as Creator</option><option>Brand Collabs</option><option>UGC Creation</option><option>Management</option>';
-}
-tabB.onclick=()=>setMode('brand');tabC.onclick=()=>setMode('creator');
-document.getElementById('forBrand').onclick=()=>setMode('brand');document.getElementById('forCreator').onclick=()=>setMode('creator');
-document.getElementById('leadForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  const n=document.getElementById('fName').value.trim(), em=document.getElementById('fEmail').value.trim(), msg=document.getElementById('fMsg').value.trim();
-  const err=document.getElementById('formErr');
-  if(n.length<2){err.textContent='Please enter your name.';return;}
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){err.textContent='Please enter a valid email address.';return;}
-  if(msg.length<5){err.textContent='Tell us a little about your project.';return;}
-  err.textContent=''; toast(`Thanks ${n}! Our ${mode} team will reach out within 24h.`); e.target.reset();
-});
-function subscribe(){const v=document.getElementById('newsEmail').value.trim(); if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){toast('Enter a valid email to join.');return;} document.getElementById('newsEmail').value=''; toast('Welcome to the IWM insider list!');}
-function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('show');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('show'),3200);}
-// collage tilt
-document.getElementById('collage').addEventListener('mousemove',e=>{
-  const r=e.currentTarget.getBoundingClientRect(); const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
-  e.currentTarget.querySelectorAll('.mini-card').forEach((c,i)=>c.style.translate=`${x*(i+1)*10}px ${y*(i+1)*10}px`);
-});
+document.getElementById('modal').addEventListener('click',function(e){if(e.target.id==='modal')closeModal();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+var mode='brand',tabB=document.getElementById('tabBrand'),tabC=document.getElementById('tabCreator');
+function setMode(m){mode=m;tabB.classList.toggle('on',m==='brand');tabC.classList.toggle('on',m==='creator');document.getElementById('forBrand').style.background=m==='brand'?'#111':'transparent';document.getElementById('forBrand').style.color=m==='brand'?'#fff':'#111';document.getElementById('fService').innerHTML=m==='brand'?'<option>Influencer Marketing</option><option>Campaign Strategy</option><option>Brand Partnerships</option><option>Campaign Execution</option><option>Performance Reporting</option>':'<option>Join as Creator</option><option>Brand Collaborations</option><option>Content Creation</option><option>Creator Management</option>';}
+tabB.onclick=function(){setMode('brand');};tabC.onclick=function(){setMode('creator');};
+document.getElementById('forBrand').onclick=function(){setMode('brand');};document.getElementById('forCreator').onclick=function(){setMode('creator');};
+document.getElementById('leadForm').addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('fName').value.trim(),em=document.getElementById('fEmail').value.trim(),msg=document.getElementById('fMsg').value.trim(),err=document.getElementById('formErr');if(n.length<2){err.textContent='Please enter your name.';return;}if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){err.textContent='Please enter a valid email address.';return;}if(msg.length<5){err.textContent='Tell us a little about your project.';return;}err.textContent='';toast('Thanks '+n+'! Our team will reach out within 24 hours.');e.target.reset();});
+function subscribe(){var v=document.getElementById('newsEmail').value.trim();if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){toast('Enter a valid email to join.');return;}document.getElementById('newsEmail').value='';toast("We'll be in touch!");}
+function toast(t){var el=document.getElementById('toast');el.textContent=t;el.classList.add('show');clearTimeout(el._t);el._t=setTimeout(function(){el.classList.remove('show');},3200);}
+document.getElementById('collage').addEventListener('mousemove',function(e){var r=e.currentTarget.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;e.currentTarget.querySelectorAll('.mini-card').forEach(function(c,i){c.style.translate=(x*(i+1)*10)+'px '+(y*(i+1)*10)+'px';});});
 </script>
 </body>
 </html>
