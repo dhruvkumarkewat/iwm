@@ -12,8 +12,8 @@ export default function About() {
             <div className="about-val-item"><span className="about-val-num">03</span><span className="about-val-text">Results-Driven Creativity</span></div>
           </div>
         </div>
-        <div className="about-collage reveal" id="collage">
-          <img className="main-portrait" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=400&auto=format&fit=crop" alt="Creator at work" />
+        <div className="about-collage" id="collage">
+          <img className="main-portrait reveal-img" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=400&auto=format&fit=crop" alt="Creator at work" />
           <div className="mini-card" style={{left:'8%',top:'6%',transform:'rotate(-8deg)'}}><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop" alt="" /></div>
           <div className="mini-card" style={{left:'2%',top:'44%',transform:'rotate(6deg)',width:'150px'}}><img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=400&auto=format&fit=crop" alt="" /></div>
           <div className="mini-card" style={{right:'8%',top:'12%',transform:'rotate(8deg)'}}><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop" alt="" /></div>

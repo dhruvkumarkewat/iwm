@@ -41,7 +41,7 @@ export default function Services() {
         <div className="eyebrow" style={{justifyContent:'center'}}>Our Services</div>
         <h2 style={{fontFamily:'var(--serif)',fontWeight:400}}>End-to-End Influencer Marketing</h2>
       </div>
-      <div className="svc-wrap">
+      <div className="svc-wrap reveal-3d delay-1">
         <div className="svc-track-outer">
           <div className="svc-coverflow">
             {svcData.map((s, i) => (

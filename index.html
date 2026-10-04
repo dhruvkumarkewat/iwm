@@ -57,8 +57,16 @@ section{position:relative}
 .eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;opacity:.7;display:flex;align-items:center;gap:10px}
 .eyebrow:before{content:'';width:22px;height:1px;background:currentColor;display:inline-block}
 h1,h2.serif{font-family:var(--serif);font-weight:400;line-height:.95}
-.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1;transform:none}
+.reveal, .reveal-3d, .reveal-img { opacity: 0; will-change: transform, opacity, filter; }
+.reveal { transform: translateY(50px); filter: blur(8px); transition: opacity 1.2s ease, transform 1.2s cubic-bezier(.2,.7,.2,1), filter 1.2s ease; }
+.reveal.in { opacity: 1; transform: none; filter: blur(0); }
+.reveal-3d { transform: translateY(80px) rotateX(20deg) scale(0.92); transform-origin: top center; transition: all 1.4s cubic-bezier(.2,.8,.2,1); }
+.reveal-3d.in { opacity: 1; transform: none; }
+.reveal-img { transform: scale(1.15); clip-path: inset(12%); transition: all 1.6s cubic-bezier(.2,.8,.2,1); }
+.reveal-img.in { opacity: 1; transform: scale(1); clip-path: inset(0); }
+.delay-1 { transition-delay: 0.15s; }
+.delay-2 { transition-delay: 0.3s; }
+.delay-3 { transition-delay: 0.45s; }
 /* HERO */
 #home{min-height:100vh;display:flex;align-items:stretch;background:#0c0b09;overflow:hidden}
 .hero-bg{position:absolute;inset:0}
@@ -353,7 +361,7 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
 
 <!-- 01 HERO -->
 <section id="home">
-  <div class="hero-bg"><img id="heroImg" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop" alt="Creator at work"></div>
+  <div class="hero-bg reveal-img"><img id="heroImg" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop" alt="Creator at work"></div>
   <div class="hero-inner">
     <div class="hero-copy reveal in">
       <h1>Real<br>Creators.<br><em>Real Impact.</em></h1>
@@ -388,7 +396,7 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
       <br><button class="btn-light" onclick="openModal('story')">Our Story <i class="fa-solid fa-arrow-right"></i></button>
     </div>
     <div class="about-collage reveal" id="collage">
-      <img class="main-portrait" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=400&auto=format&fit=crop" alt="Creator at work">
+      <img class="main-portrait reveal-img" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=400&auto=format&fit=crop" alt="Creator at work">
       <div class="mini-card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop" alt=""></div>
       <div class="mini-card"><img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=400&auto=format&fit=crop" alt=""></div>
       <div class="mini-card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop" alt=""></div>
@@ -406,7 +414,7 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
 <!-- 03 SERVICES -->
 <section id="services">
   <div class="reveal"><div class="eyebrow" style="justify-content:center">Our Services</div><h2 style="font-family:var(--serif);font-weight:400">End-to-End Influencer Marketing</h2></div>
-  <div class="svc-wrap">
+  <div class="svc-wrap reveal-3d delay-1">
     <div class="svc-track-outer"><div class="svc-coverflow" id="svcCoverflow"></div></div>
   </div>
 </section>
@@ -517,7 +525,7 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
     <div class="eyebrow">Creator Stories</div>
     <h2 style="font-family:var(--serif);font-weight:400">Words From the<br>People We Work With.</h2>
   </div>
-  <div class="testi-slider-wrap reveal">
+  <div class="testi-slider-wrap reveal-3d delay-1">
     <div class="testi-track-outer" id="testiOuter"><div class="testi-track" id="testiTrack"></div></div>
     <div class="testi-controls">
       <button class="testi-btn" id="testiPrev" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i></button>
@@ -546,7 +554,7 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
         <a href="https://instagram.com/influencerwedsmarketing.in" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:9px;color:inherit"><i class="fa-brands fa-instagram"></i> @influencerwedsmarketing.in</a>
       </div>
     </div>
-    <div class="mid-img reveal"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop" alt="Creative collaboration"></div>
+    <div class="mid-img reveal-img"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop" alt="Creative collaboration"></div>
     <div class="form-card reveal">
       <div class="toggle-tabs"><button class="on" id="tabBrand">Brand</button><button id="tabCreator">Creator</button></div>
       <form id="leadForm" novalidate>
@@ -639,7 +647,7 @@ document.getElementById('hamb').onclick=function(){document.getElementById('mobi
 document.getElementById('closeMenu').onclick=function(){document.getElementById('mobileMenu').classList.remove('open');};
 document.querySelectorAll('#mobileMenu a').forEach(function(a){a.onclick=function(){document.getElementById('mobileMenu').classList.remove('open');};});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+document.querySelectorAll('.reveal, .reveal-3d, .reveal-img').forEach(function(el){io.observe(el);});
 var cio=new IntersectionObserver(function(es){es.forEach(function(e){
   if(!e.isIntersecting)return;var el=e.target;cio.unobserve(el);
   var target=parseFloat(el.dataset.count),dec=parseInt(el.dataset.dec||0),suf=el.dataset.suffix||'',t0=performance.now();
@@ -753,7 +761,9 @@ var steps=[
  {t:'Execute',d:'Briefing, coordination, content delivery and campaign management.',img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop'},
  {t:'Track',d:'Performance monitoring, reporting and optimisation.',img:'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop'},
 ];
-document.getElementById('procRow').innerHTML='<div id="procFill"></div>'+steps.map(function(s,i){return '<div class="pstep reveal in"><div class="circ"><img src="'+s.img+'" alt="'+s.t+'"></div><b class="num">0'+(i+1)+'</b><h4>'+s.t+'</h4><p>'+s.d+'</p></div>';}).join('');
+document.getElementById('procRow').innerHTML='<div id="procFill"></div>'+steps.map(function(s,i){var d=(i%3)+1;return '<div class="pstep reveal-3d delay-'+d+'"><div class="circ"><img src="'+s.img+'" alt="'+s.t+'"></div><b class="num">0'+(i+1)+'</b><h4>'+s.t+'</h4><p>'+s.d+'</p></div>';}).join('');
+// Observe newly added dynamic elements
+document.querySelectorAll('.pstep.reveal-3d').forEach(function(el){io.observe(el);});
 new Chart(document.getElementById('spark'),{type:'line',data:{labels:[1,2,3,4,5,6,7,8],datasets:[{data:[2,4,3,6,5,8,7,10],borderColor:'#c8a86a',borderWidth:2,pointRadius:0,tension:.4,fill:true,backgroundColor:'rgba(200,168,106,.12)'}]},options:{plugins:{legend:{display:false}},scales:{x:{display:false},y:{display:false}},animation:{duration:2000}}});
 new Chart(document.getElementById('bars'),{type:'bar',data:{labels:['W1','W2','W3','W4','W5','W6','W7'],datasets:[{data:[40,65,50,80,60,90,75],backgroundColor:['#ffffff33','#ffffff55','#ffffff33','#c8a86a','#ffffff55','#fff','#ffffff66'],borderRadius:4}]},options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{color:'#888',font:{size:9}}},y:{display:false}}}});
 var testiData=[

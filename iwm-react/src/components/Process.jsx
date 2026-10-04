@@ -16,7 +16,7 @@ export default function Process() {
       <div className="proc-row">
         <div id="procFill" style={{width:'84%'}}></div>
         {steps.map((s, i) => (
-          <div key={i} className="pstep reveal in">
+          <div key={i} className={`pstep reveal-3d delay-${(i%3)+1}`}>
             <div className="circ"><img src={s.img} alt={s.t} /></div>
             <b className="num">0{i+1}</b>
             <h4>{s.t}</h4>

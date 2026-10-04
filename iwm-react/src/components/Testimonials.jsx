@@ -16,7 +16,7 @@ export default function Testimonials() {
         <div className="eyebrow">Creator Stories</div>
         <h2 style={{fontFamily:'var(--serif)',fontWeight:400}}>Words From the<br/>People We Work With.</h2>
       </div>
-      <div className="testi-slider-wrap reveal">
+      <div className="testi-slider-wrap reveal-3d delay-1">
         <div className="testi-track-outer" style={{overflow:'hidden'}}>
           <div className="testi-track" style={{transform:`translateX(calc(-${idx * 50}% - ${idx * 12}px))`}}>
             {testiData.map((t, i) => (
