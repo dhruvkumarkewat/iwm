@@ -25,7 +25,7 @@ export default function Footer() {
             <a href="mailto:Influencerwedsmarketing@gmail.com" style={{display:'block'}}>Influencerwedsmarketing@gmail.com</a>
             <a href="tel:+918770721703" style={{display:'block'}}>+91 87707 21703</a>
           </div>
-          <img src="/images/29_footer_image.png" alt="" style={{width:'100%', height:'80px', objectFit:'cover', borderRadius:'10px', marginTop:'16px'}} />
+          <img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=400&auto=format&fit=crop" alt="" style={{width:'100%', height:'80px', objectFit:'cover', borderRadius:'10px', marginTop:'16px'}} />
         </div>
       </div>
       <div className="copy"><span>2025 IWM - Influencer Weds Marketing. All rights reserved.</span><span>Crafted with influence</span></div>

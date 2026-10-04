@@ -20,9 +20,9 @@ export default function Brands() {
           </div>
         </div>
         <div className="bcard" style={{display:'flex'}}>
-          <img src="/images/23_trusted_brand_photo_01.png" alt="" style={{position:'static',width:'33.33%'}} />
-          <img src="/images/24_trusted_brand_photo_02.png" alt="" style={{position:'static',width:'33.33%'}} />
-          <img src="/images/25_trusted_brand_photo_03.png" alt="" style={{position:'static',width:'33.33%'}} />
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=400&auto=format&fit=crop" alt="" style={{position:'static',width:'33.33%'}} />
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=400&auto=format&fit=crop" alt="" style={{position:'static',width:'33.33%'}} />
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop" alt="" style={{position:'static',width:'33.33%'}} />
         </div>
         <div className="bcard dark" style={{textAlign:'center'}}>
           <div className="over">

@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 export default function Hero() {
   return (
     <section id="home">
-      <div className="hero-bg"><img id="heroImg" src="/images/01_hero_woman.png" alt="Creator at work" /></div>
+      <div className="hero-bg"><img id="heroImg" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop" alt="Creator at work" /></div>
       <div className="hero-inner">
         <div className="hero-copy reveal in">
           <h1>Real<br/>Creators.<br/><em>Real Impact.</em></h1>

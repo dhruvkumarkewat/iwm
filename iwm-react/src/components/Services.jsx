@@ -1,11 +1,11 @@
 
 
 const svcData = [
- {t:'Influencer Management',d:'Creator selection, relationship management, coordination and campaign execution.',img:'/images/05_services_influencer.png'},
- {t:'Campaign Strategy',d:'Creator matching, content strategy, campaign planning and authentic storytelling.',img:'/images/06_services_creator.png'},
- {t:'Brand Partnerships',d:'Brand requirement understanding, deal acquisition, negotiation and coordination.',img:'/images/07_services_brand_campaign.png'},
- {t:'Campaign Execution',d:'Calendars, trackers, deliverables, payment coordination and seamless execution.',img:'/images/09_services_campaign_execution.png'},
- {t:'Performance and Reporting',d:'Campaign tracking, analytics, optimisation and transparent reporting.',img:'/images/11_services_analytics.png'}
+ {t:'Influencer Management',d:'Creator selection, relationship management, coordination and campaign execution.',img:'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=400&auto=format&fit=crop'},
+ {t:'Campaign Strategy',d:'Creator matching, content strategy, campaign planning and authentic storytelling.',img:'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=800&auto=format&fit=crop'},
+ {t:'Brand Partnerships',d:'Brand requirement understanding, deal acquisition, negotiation and coordination.',img:'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop'},
+ {t:'Campaign Execution',d:'Calendars, trackers, deliverables, payment coordination and seamless execution.',img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop'},
+ {t:'Performance and Reporting',d:'Campaign tracking, analytics, optimisation and transparent reporting.',img:'https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=400&auto=format&fit=crop'}
 ]
 
 export default function Services() {
