@@ -173,14 +173,15 @@ h1,h2.serif{font-family:var(--serif);font-weight:400;line-height:.95}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
 .filters button{border-radius:100px;padding:8px 16px;font-size:12px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;cursor:pointer}
 .filters button.on{background:#fff;color:#000}
-.coverflow{display:flex;gap:14px;justify-content:center;align-items:center;perspective:1200px;min-height:440px}
-.crf{width:170px;height:380px;border-radius:18px;overflow:hidden;position:relative;transition:.6s cubic-bezier(.2,.7,.2,1);border:1px solid rgba(255,255,255,.15);cursor:pointer;flex-shrink:0}
-.crf img{width:100%;height:100%;object-fit:cover}
-.crf.center{width:220px;height:440px;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px var(--gold)}
-.crf.left1{transform:rotateY(28deg) scale(.92);opacity:.85}
-.crf.left2{transform:rotateY(38deg) scale(.84);opacity:.6}
-.crf.right1{transform:rotateY(-28deg) scale(.92);opacity:.85}
-.crf.right2{transform:rotateY(-38deg) scale(.84);opacity:.6}
+.coverflow{display:flex;justify-content:center;align-items:center;perspective:1400px;min-height:540px;position:relative;width:100%}
+.crf{width:280px;height:460px;position:absolute;transition:transform .7s cubic-bezier(.2,.7,.2,1), opacity .7s, box-shadow .7s;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.15);cursor:pointer;background:#151310;will-change:transform}
+.crf img{width:100%;height:100%;object-fit:cover;opacity:.85}
+.crf.left2{transform:translateX(-380px) translateZ(-350px) rotateY(35deg);z-index:1;opacity:.15;pointer-events:none}
+.crf.left1{transform:translateX(-200px) translateZ(-150px) rotateY(20deg);z-index:2;opacity:.6}
+.crf.center{transform:translateX(0) translateZ(50px) rotateY(0);z-index:3;opacity:1;box-shadow:0 0 0 1px var(--gold),0 30px 60px rgba(0,0,0,.6)}
+.crf.center img{opacity:1}
+.crf.right1{transform:translateX(200px) translateZ(-150px) rotateY(-20deg);z-index:2;opacity:.6}
+.crf.right2{transform:translateX(380px) translateZ(-350px) rotateY(-35deg);z-index:1;opacity:.15;pointer-events:none}
 .crf-info{position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:12px}
 .crf-info b{display:block;font-size:14px}
 .cre-ecosystem{margin-top:28px;background:#131210;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:26px 24px}
@@ -296,8 +297,13 @@ footer{background:#080807;color:#fff;padding:60px 0 20px;border-top:1px solid rg
   nav.desk{display:none}#hamb{display:block}
   .perf-mid{height:420px}.mid-img{min-height:360px}
   .brands-bottom{grid-template-columns:1fr}.logo-grid{grid-template-columns:repeat(2,1fr)}
-  .coverflow{overflow-x:auto;justify-content:flex-start;padding-bottom:10px}
-  .crf{flex:0 0 200px;transform:none!important;opacity:1!important;height:360px}.crf.center{height:360px;width:200px}
+  .coverflow{min-height:420px;perspective:900px}
+  .crf{width:220px;height:380px}
+  .crf.left2{transform:translateX(-130px) translateZ(-250px) rotateY(35deg);opacity:0}
+  .crf.left1{transform:translateX(-80px) translateZ(-150px) rotateY(20deg);opacity:.4}
+  .crf.center{transform:translateX(0) translateZ(20px) rotateY(0)}
+  .crf.right1{transform:translateX(80px) translateZ(-150px) rotateY(-20deg);opacity:.4}
+  .crf.right2{transform:translateX(130px) translateZ(-250px) rotateY(-35deg);opacity:0}
   .about-stats{border:0;border-top:1px solid rgba(255,255,255,.12);padding:20px 0 0;flex-direction:row;gap:30px}
   .tcard{flex:0 0 100%}
 }
@@ -700,10 +706,45 @@ var creators=[
  {n:'Beauty Creator',c:'beauty',img:'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&auto=format&fit=crop',bio:'Beauty review and tutorial creator.'},
  {n:'Skincare Creator',c:'skincare',img:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500&auto=format&fit=crop',bio:'Skincare routine and ingredient education creator.'},
 ];
-var creF='all';
-function renderCre(){var list=creF==='all'?creators.slice(0,5):creators.filter(function(c){return c.c===creF;});var show=(list.length?list:creators.slice(0,5)).slice(0,5);var pos=['left2','left1','center','right1','right2'];document.getElementById('coverflow').innerHTML=show.map(function(c,i){return '<div class="crf '+(pos[i]||'')+'" onclick="openCreator('+creators.indexOf(c)+')"><img src="'+c.img+'" alt="'+c.n+'"><div class="crf-info"><b>'+c.n+'</b><span>'+c.c+'</span></div></div>';}).join('');}
+var creF='all', creIdx=2, creAuto, creShow=[];
+function renderCre(){
+  var list=creF==='all'?creators.slice(0,5):creators.filter(function(c){return c.c===creF;});
+  var base=list.length?list:creators.slice(0,5);
+  creShow=[];
+  for(var i=0;i<5;i++) creShow.push(base[i%base.length]);
+  document.getElementById('coverflow').innerHTML=creShow.map(function(c,i){
+    return '<div class="crf" onclick="clickCreCard('+i+')"><img src="'+c.img+'" alt="'+c.n+'"><div class="crf-info"><b>'+c.n+'</b><span>'+c.c+'</span></div></div>';
+  }).join('');
+  updateCre3d();
+  resetCreAuto();
+}
+function updateCre3d(){
+  var cards=document.querySelectorAll('#coverflow .crf');
+  cards.forEach(function(c,i){
+    c.className='crf';
+    var diff = i - creIdx;
+    if(diff < -2) diff += 5;
+    if(diff > 2) diff -= 5;
+    if(diff===-2) c.classList.add('left2');
+    else if(diff===-1) c.classList.add('left1');
+    else if(diff===0) c.classList.add('center');
+    else if(diff===1) c.classList.add('right1');
+    else if(diff===2) c.classList.add('right2');
+  });
+}
+function clickCreCard(i){
+  if(i===creIdx) openCreator(creators.indexOf(creShow[i]));
+  else { creIdx=i; updateCre3d(); resetCreAuto(); }
+}
+function nextCre(){ creIdx=(creIdx+1)%5; updateCre3d(); }
+function resetCreAuto(){ clearInterval(creAuto); creAuto=setInterval(nextCre,3000); }
 renderCre();
-document.querySelectorAll('#creFilters button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#creFilters button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');creF=b.dataset.c;renderCre();};});
+document.querySelectorAll('#creFilters button').forEach(function(b){
+  b.onclick=function(){
+    document.querySelectorAll('#creFilters button').forEach(function(x){x.classList.remove('on');});
+    b.classList.add('on'); creF=b.dataset.c; renderCre();
+  };
+});
 function openCreator(i){var c=creators[i];document.getElementById('mImg').src=c.img;document.getElementById('mTitle').textContent=c.n;document.getElementById('mBody').textContent=c.bio+' Part of the IWM creator network - selected for content quality, audience trust and brand alignment.';document.getElementById('mExtra').innerHTML='<div style="display:flex;gap:10px"><span style="background:#111;color:#fff;border-radius:100px;padding:6px 14px;font-size:12px">'+c.c+'</span></div>';document.getElementById('modal').classList.add('open');}
 var steps=[
  {t:'Understand',d:'Brand requirements, campaign goals and audience definition.',img:'https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=700&auto=format&fit=crop'},
