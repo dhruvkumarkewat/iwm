@@ -1,5 +1,4 @@
-
-
+import { useState, useEffect } from 'react';
 const svcData = [
  {t:'Influencer Management',d:'Creator selection, relationship management, coordination and campaign execution.',img:'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=400&auto=format&fit=crop'},
  {t:'Campaign Strategy',d:'Creator matching, content strategy, campaign planning and authentic storytelling.',img:'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=800&auto=format&fit=crop'},
@@ -9,6 +8,33 @@ const svcData = [
 ]
 
 export default function Services() {
+  const [idx, setIdx] = useState(2);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIdx(prev => (prev + 1) % svcData.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const handleClick = (i) => {
+    if(i !== idx) setIdx(i);
+    // Modal logic omitted for React component temporarily, can be added if needed
+  };
+
+  const getCardClass = (i) => {
+    let diff = i - idx;
+    if(diff < -2) diff += 5;
+    if(diff > 2) diff -= 5;
+    
+    if(diff === -2) return 'svc-3d s-left2';
+    if(diff === -1) return 'svc-3d s-left1';
+    if(diff === 0) return 'svc-3d s-center';
+    if(diff === 1) return 'svc-3d s-right1';
+    if(diff === 2) return 'svc-3d s-right2';
+    return 'svc-3d';
+  };
+
   return (
     <section id="services">
       <div className="reveal">
@@ -17,12 +43,12 @@ export default function Services() {
       </div>
       <div className="svc-wrap">
         <div className="svc-track-outer">
-          <div className="svc-track">
+          <div className="svc-coverflow">
             {svcData.map((s, i) => (
-              <div key={i} className="svc">
+              <div key={i} className={getCardClass(i)} onClick={() => handleClick(i)}>
                 <img src={s.img} alt={s.t} />
                 <div className="svc-body">
-                  <i>SERVICE 0{i+1}</i>
+                  <i style={{fontSize:'10px',letterSpacing:'.2em',opacity:0.5,fontStyle:'normal'}}>SERVICE 0{i+1}</i>
                   <h4>{s.t}</h4>
                   <p>{s.d}</p>
                 </div>
