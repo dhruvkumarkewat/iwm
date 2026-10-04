@@ -98,20 +98,17 @@ h1,h2.serif{font-family:var(--serif);font-weight:400;line-height:.95}
 #services{background:#0a0908;padding:90px 0 60px;text-align:center;overflow:hidden}
 #services h2{font-size:clamp(30px,3.2vw,44px);margin:12px 0 36px}
 .svc-wrap{position:relative;max-width:1320px;margin:0 auto;padding:0 34px}
-.svc-track-outer{overflow:hidden;padding:30px 0 10px;cursor:grab;touch-action:pan-y}
-.svc-track{display:flex;gap:18px;transition:transform .6s cubic-bezier(.2,.7,.2,1);will-change:transform}
-.svc{flex:0 0 220px;height:390px;border-radius:18px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.14);background:#151310;text-align:left;transition:.5s}
+.svc-track-outer{padding:30px 0 10px}
+.svc-track{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.svc{height:390px;border-radius:18px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.14);background:#151310;text-align:left;transition:.3s;cursor:pointer}
 .svc img{width:100%;height:52%;object-fit:cover;opacity:.9}
 .svc-body{padding:16px}
 .svc-body h4{font-size:13.5px;line-height:1.3;min-height:34px;font-weight:600}
 .svc-body p{font-size:11.5px;opacity:.55;line-height:1.55;margin-top:8px}
 .svc-body i{font-size:10px;letter-spacing:.2em;opacity:.5;font-style:normal}
 .svc-num{position:absolute;bottom:10px;left:14px;font-family:var(--serif);font-size:28px;opacity:.35}
-.svc.active{flex-basis:240px;box-shadow:0 0 0 1px var(--gold),0 30px 60px rgba(0,0,0,.6);transform:scale(1.04)}
-.svc-arrow{position:absolute;top:45%;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.5);color:#fff;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
-.svc-arrow:hover{background:#fff;color:#000}
-#svcPrev{left:8px}#svcNext{right:8px}
-.swipe-hint{margin-top:18px;font-size:11px;letter-spacing:.2em;opacity:.5}
+.svc:hover{box-shadow:0 0 0 1px var(--gold),0 30px 60px rgba(0,0,0,.6);transform:translateY(-6px)}
+.svc-arrow, .swipe-hint{display:none}
 /* CAMPAIGNS */
 #campaigns{background:var(--paper);color:#111;padding:100px 0;overflow:hidden}
 .camp-head{max-width:1320px;margin:0 auto;padding:0 34px;display:grid;grid-template-columns:380px 1fr;gap:40px;align-items:end;margin-bottom:52px}

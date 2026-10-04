@@ -13,18 +13,15 @@ export default function Performance() {
           </div>
         </div>
         <div className="perf-mid reveal">
-          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop" style={{position:'absolute',inset:'40px 60px',width:'calc(100% - 120px)',height:'calc(100% - 80px)',objectFit:'cover',borderRadius:'20px',opacity:.5}} alt="" />
+          <img src="/images/26_performance_main_woman.png" style={{position:'absolute',inset:'40px 60px',width:'calc(100% - 120px)',height:'calc(100% - 80px)',objectFit:'cover',borderRadius:'20px',opacity:.5}} alt="" />
           <div className="glass g1"><small style={{opacity:.6,fontSize:'11px'}}>Total Views</small><b className="big">2.8M+</b><span className="up">All campaigns</span></div>
           <div className="glass g2"><small style={{opacity:.6,fontSize:'11px'}}>Best CPV Achieved</small><b style={{fontSize:'28px',fontFamily:'var(--serif)'}}>Rs.0.08</b></div>
           <div className="glass g3"><small style={{opacity:.6,fontSize:'11px'}}>Creators Live</small><b className="big">410</b><span className="up">Naturali</span></div>
         </div>
         <div className="reveal">
           <div className="soc-row"><i className="fa-brands fa-instagram"></i> <span style={{fontSize:'12px',opacity:.6}}>@influencerwedsmarketing.in</span></div>
-          <div className="perf-right" style={{marginTop:'12px'}}>
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop" alt="" />
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" alt="" />
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop" alt="" />
-            <img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=400&auto=format&fit=crop" alt="" />
+          <div className="perf-right" style={{marginTop:'12px', display:'block'}}>
+            <img src="/images/27_performance_social_cards.png" alt="" style={{width:'100%', height:'auto'}} />
           </div>
         </div>
       </div>

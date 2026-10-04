@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
 const creatorsData = [
- {n:'Skincare Creator',c:'skincare',img:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&auto=format&fit=crop'},
- {n:'Beauty Creator',c:'beauty',img:'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=500&auto=format&fit=crop'},
- {n:'Lifestyle Creator',c:'lifestyle',img:'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=500&auto=format&fit=crop'},
- {n:'Haircare Creator',c:'haircare',img:'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=500&auto=format&fit=crop'},
- {n:'Wellness Creator',c:'wellness',img:'https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=500&auto=format&fit=crop'},
+ {n:'Skincare Creator',c:'skincare',img:'/images/15_creators_woman.png'},
+ {n:'Beauty Creator',c:'beauty',img:'/images/16_creators_man.png'},
+ {n:'Lifestyle Creator',c:'lifestyle',img:'/images/17_creators_hat_woman.png'},
+ {n:'Haircare Creator',c:'haircare',img:'/images/15_creators_woman.png'},
+ {n:'Wellness Creator',c:'wellness',img:'/images/16_creators_man.png'},
 ]
 const filters = ['all', 'beauty', 'skincare', 'lifestyle', 'haircare', 'wellness']
 

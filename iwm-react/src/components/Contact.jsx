@@ -21,7 +21,7 @@ export default function Contact() {
             <a href="https://instagram.com/influencerwedsmarketing.in" target="_blank" rel="noopener noreferrer" style={{display:'flex',alignItems:'center',gap:'9px'}}><i className="fa-brands fa-instagram"></i> @influencerwedsmarketing.in</a>
           </div>
         </div>
-        <div className="mid-img reveal"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop" alt="Creative collaboration" /></div>
+        <div className="mid-img reveal"><img src="/images/28_contact_woman.png" alt="Creative collaboration" /></div>
         <div className="form-card reveal">
           <div className="toggle-tabs">
             <button className={mode === 'brand' ? 'on' : ''} onClick={() => setMode('brand')}>Brand</button>
