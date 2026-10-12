@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "installCommand": "cd iwm-react && npm install",
+  "buildCommand": "cd iwm-react && npm run build",
+  "outputDirectory": "iwm-react/dist",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
