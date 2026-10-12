@@ -1,46 +1,292 @@
 import { useState } from 'react'
+import TiltCard from './TiltCard'
 
 export default function Contact() {
-  const [mode, setMode] = useState('brand')
+  const [mode, setMode] = useState('brand') // 'brand' | 'creator'
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    handleOrBrand: '',
+    serviceOrNiche: 'Influencer Management',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+    if (errorMsg) setErrorMsg('')
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!formData.name.trim() || !formData.email.trim()) {
+      setErrorMsg('Please enter your name and a valid email address.')
+      return
+    }
+    setIsSubmitting(true)
+
+    // Simulate sending inquiry
+    setTimeout(() => {
+      setIsSubmitting(false)
+      setSubmitted(true)
+      setTimeout(() => {
+        setSubmitted(false)
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          handleOrBrand: '',
+          serviceOrNiche: mode === 'brand' ? 'Influencer Management' : 'Beauty & Skincare',
+          message: ''
+        })
+      }, 5000)
+    }, 700)
+  }
 
   return (
     <section id="contact">
       <div className="contact-grid">
+        {/* Left Column: Direct Agency Channels */}
         <div className="reveal">
-          <div className="brand"><b style={{fontSize:'24px'}}>IWM</b></div>
-          <div className="eyebrow" style={{marginTop:'10px'}}>Let's Connect</div>
-          <h2 style={{fontFamily:'var(--serif)',fontWeight:400}}>Let's Create<br/>Something Great.</h2>
-          <p style={{fontSize:'12.5px',opacity:.6,lineHeight:1.7}}>Whether you are a brand looking for the right creators or a creator ready for new opportunities - we would love to hear from you.</p>
-          <div className="cta-row">
-            <button className="btn-dark" onClick={() => setMode('brand')} style={{background: mode==='brand'?'#111':'transparent', color:mode==='brand'?'#fff':'#111'}}>For Brands <i className="fa-solid fa-arrow-right"></i></button>
-            <button className="btn-pill" onClick={() => setMode('creator')} style={{borderColor:'#111', color:mode==='creator'?'#fff':'#111'}}>For Creators <i className="fa-solid fa-arrow-right"></i></button>
+          <div className="brand">
+            <b style={{ fontSize: '26px' }}>IWM</b>
+            <small style={{ fontSize: '9px', letterSpacing: '.2em' }}>INFLUENCER WEDS MARKETING</small>
           </div>
-          <div id="contactInfo" style={{marginTop:'20px',fontSize:'12.5px',opacity:.68,lineHeight:2.3}}>
-            <a href="mailto:Influencerwedsmarketing@gmail.com" style={{display:'flex',alignItems:'center',gap:'9px'}}><i className="fa-solid fa-envelope"></i> Influencerwedsmarketing@gmail.com</a>
-            <a href="tel:+918770721703" style={{display:'flex',alignItems:'center',gap:'9px'}}><i className="fa-solid fa-phone"></i> +91 87707 21703</a>
-            <a href="https://instagram.com/influencerwedsmarketing.in" target="_blank" rel="noopener noreferrer" style={{display:'flex',alignItems:'center',gap:'9px'}}><i className="fa-brands fa-instagram"></i> @influencerwedsmarketing.in</a>
+          <div className="eyebrow" style={{ marginTop: '16px' }}>
+            Let's Connect
+          </div>
+          <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 400 }}>
+            LET'S MAKE THE NEXT<br />
+            CONNECTION COUNT.
+          </h2>
+          <p style={{ fontSize: '13px', opacity: 0.72, lineHeight: 1.7, marginTop: '8px' }}>
+            Whether you're a brand looking to connect with creators or a creator exploring new opportunities, let's start a conversation.
+          </p>
+
+          {/* Quick Dual CTA Selector */}
+          <div className="cta-row">
+            <button
+              type="button"
+              className={mode === 'brand' ? 'btn-dark' : 'btn-pill'}
+              onClick={() => {
+                setMode('brand')
+                setFormData(prev => ({ ...prev, serviceOrNiche: 'Influencer Management' }))
+              }}
+              style={{
+                background: mode === 'brand' ? '#111' : 'transparent',
+                color: mode === 'brand' ? '#fff' : '#111',
+                borderColor: '#111'
+              }}
+            >
+              I'M A BRAND <i className="fa-solid fa-arrow-right"></i>
+            </button>
+            <button
+              type="button"
+              className={mode === 'creator' ? 'btn-dark' : 'btn-pill'}
+              onClick={() => {
+                setMode('creator')
+                setFormData(prev => ({ ...prev, serviceOrNiche: 'Beauty & Skincare' }))
+              }}
+              style={{
+                background: mode === 'creator' ? '#111' : 'transparent',
+                color: mode === 'creator' ? '#fff' : '#111',
+                borderColor: '#111'
+              }}
+            >
+              I'M A CREATOR <i className="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          {/* Official Supplied Agency Channels */}
+          <div id="contactInfo" style={{ marginTop: '26px', fontSize: '13px', opacity: 0.8, lineHeight: 2.2 }}>
+            <div style={{ fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '.18em', opacity: 0.6, marginBottom: '4px' }}>
+              Direct Channels
+            </div>
+            <a href="mailto:Influencerwedsmarketing@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <i className="fa-solid fa-envelope gold-text"></i> Influencerwedsmarketing@gmail.com
+            </a>
+            <a href="tel:+918770721703" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <i className="fa-solid fa-phone gold-text"></i> +91 87707 21703
+            </a>
+            <a href="https://instagram.com/influencerwedsmarketing.in" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <i className="fa-brands fa-instagram gold-text"></i> @influencerwedsmarketing.in
+            </a>
+          </div>
+
+          <div className="contact-timeline-note">
+            <span className="dot"></span> Proposals drafted within 3 working days • Rapid onboarding
           </div>
         </div>
-        <div className="mid-img reveal-img"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop" alt="Creative collaboration" /></div>
+
+        {/* Center: Curated Editorial Photography with 3D Tilt */}
+        <div className="mid-img reveal-img">
+          <TiltCard maxTilt={8} scale={1.02} style={{ height: '100%' }}>
+            <img
+              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop"
+              alt="Creative collaboration in studio"
+            />
+            <div className="mid-img-caption">
+              <b>Collaborative Energy</b>
+              <span>Where strategy meets creativity</span>
+            </div>
+          </TiltCard>
+        </div>
+
+        {/* Right Column: Tailored Inquiry Form */}
         <div className="form-card reveal">
           <div className="toggle-tabs">
-            <button className={mode === 'brand' ? 'on' : ''} onClick={() => setMode('brand')}>Brand</button>
-            <button className={mode === 'creator' ? 'on' : ''} onClick={() => setMode('creator')}>Creator</button>
+            <button
+              type="button"
+              className={mode === 'brand' ? 'on' : ''}
+              onClick={() => {
+                setMode('brand')
+                setFormData(prev => ({ ...prev, serviceOrNiche: 'Influencer Management' }))
+              }}
+            >
+              Brand Inquiry
+            </button>
+            <button
+              type="button"
+              className={mode === 'creator' ? 'on' : ''}
+              onClick={() => {
+                setMode('creator')
+                setFormData(prev => ({ ...prev, serviceOrNiche: 'Beauty & Skincare' }))
+              }}
+            >
+              Creator Roster
+            </button>
           </div>
-          <form onSubmit={e => e.preventDefault()}>
-            <label>Your Name *</label><input placeholder="Your name" />
-            <label>Email Address *</label><input type="email" placeholder="you@company.com" />
-            <label>Select Service</label>
-            <select>
-              {mode === 'brand' ? (
-                <><option>Influencer Marketing</option><option>Campaign Strategy</option><option>Brand Partnerships</option></>
-              ) : (
-                <><option>Join as Creator</option><option>Brand Collaborations</option></>
+
+          {submitted ? (
+            <div className="form-success-box">
+              <i className="fa-solid fa-circle-check" style={{ fontSize: '36px', color: '#16a34a', marginBottom: '12px' }}></i>
+              <h4 style={{ fontFamily: 'var(--serif)', fontSize: '24px', margin: '0 0 8px' }}>Thank You for Reaching Out</h4>
+              <p style={{ fontSize: '13px', opacity: 0.75, lineHeight: 1.6 }}>
+                Your message has been received. An IWM campaign strategist will review your details and get in touch shortly.
+              </p>
+              <button
+                type="button"
+                className="btn-dark"
+                style={{ marginTop: '16px' }}
+                onClick={() => setSubmitted(false)}
+              >
+                Send Another Inquiry
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} noValidate>
+              <label htmlFor="formName">
+                {mode === 'brand' ? 'Contact Name / Brand Representative *' : 'Creator Name *'}
+              </label>
+              <input
+                id="formName"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder={mode === 'brand' ? 'e.g., Sarah Jenkins' : 'e.g., Ananya Roy'}
+                required
+              />
+
+              <label htmlFor="formEmail">Email Address *</label>
+              <input
+                id="formEmail"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder="you@domain.com"
+                required
+              />
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
+                <div>
+                  <label htmlFor="formPhone">Phone Number</label>
+                  <input
+                    id="formPhone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="+91..."
+                  />
+                </div>
+                <div>
+                  <label htmlFor="formHandle">
+                    {mode === 'brand' ? 'Company / Brand' : 'Instagram / Handle'}
+                  </label>
+                  <input
+                    id="formHandle"
+                    name="handleOrBrand"
+                    value={formData.handleOrBrand}
+                    onChange={handleInputChange}
+                    placeholder={mode === 'brand' ? 'Brand name' : '@handle'}
+                  />
+                </div>
+              </div>
+
+              <label htmlFor="formService">
+                {mode === 'brand' ? 'Primary Service Needed' : 'Creator Niche'}
+              </label>
+              <select
+                id="formService"
+                name="serviceOrNiche"
+                value={formData.serviceOrNiche}
+                onChange={handleInputChange}
+              >
+                {mode === 'brand' ? (
+                  <>
+                    <option value="Influencer Management">Influencer Management</option>
+                    <option value="Brand Campaigns">Brand Campaigns</option>
+                    <option value="Meme Marketing">Meme Marketing</option>
+                    <option value="Content Strategy">Content Strategy</option>
+                    <option value="Social Media Management">Social Media Management</option>
+                    <option value="Performance & Reporting">Performance & Reporting</option>
+                  </>
+                ) : (
+                  <>
+                    <option value="Beauty & Skincare">Beauty & Skincare</option>
+                    <option value="Lifestyle & Fashion">Lifestyle & Fashion</option>
+                    <option value="Haircare & Wellness">Haircare & Wellness</option>
+                    <option value="Meme, Comedy & Culture">Meme, Comedy & Culture</option>
+                    <option value="General Brand Collaboration">General Brand Collaboration</option>
+                  </>
+                )}
+              </select>
+
+              <label htmlFor="formMsg">
+                {mode === 'brand' ? 'Campaign Objectives & Details *' : 'Tell Us About Your Content & Channels *'}
+              </label>
+              <textarea
+                id="formMsg"
+                name="message"
+                rows="3"
+                value={formData.message}
+                onChange={handleInputChange}
+                placeholder={
+                  mode === 'brand'
+                    ? 'Outline your target launch window, audience goals, or creative vision...'
+                    : 'Share your key platforms, current follower reach, and favorite content themes...'
+                }
+              />
+
+              {errorMsg && (
+                <p className="form-error-text">
+                  <i className="fa-solid fa-triangle-exclamation"></i> {errorMsg}
+                </p>
               )}
-            </select>
-            <label>Message *</label><textarea rows="3" placeholder="Tell us about your goals..."></textarea>
-            <button type="submit">Send Message <i className="fa-solid fa-arrow-right"></i></button>
-          </form>
+
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <>Processing... <i className="fa-solid fa-spinner fa-spin"></i></>
+                ) : (
+                  <>Send Message <i className="fa-solid fa-arrow-right"></i></>
+                )}
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </section>
