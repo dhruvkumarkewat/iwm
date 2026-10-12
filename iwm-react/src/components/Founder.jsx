@@ -1,33 +1,36 @@
 import TiltCard from './TiltCard'
+import founderPortraitOfficial from '../assets/real_photos/founder-portrait-official.jpg'
+import founderFieldPortrait from '../assets/real_photos/founder-field-portrait.jpg'
 
 export default function Founder() {
   return (
-    <section id="founder">
+    <section id="founder" className="founder-section-refined">
       <div className="founder-container">
         <div className="founder-grid">
-          {/* Left Column: Portrait & Identity Card */}
+          {/* Left Column: Official Executive Founder Portrait Card */}
           <div className="founder-visual reveal">
-            <TiltCard maxTilt={10} perspective={1100} className="founder-tilt-card">
+            <TiltCard maxTilt={8} perspective={1200} className="founder-tilt-card">
               <div className="founder-card-inner">
                 <div className="founder-portrait-frame">
-                  {/* Curated editorial portrait presentation with elegant fallback and monogram badge */}
-                  <div className="founder-portrait-bg">
-                    <div className="founder-monogram-circle">
-                      <span className="founder-initials">SSP</span>
-                    </div>
-                    <div className="founder-portrait-overlay"></div>
-                  </div>
+                  {/* Official high-resolution portrait photograph of Sanskriti Shukla Pathak */}
+                  <img
+                    src={founderPortraitOfficial}
+                    alt="Sanskriti Shukla Pathak — Founder & CEO of Influencer Weds Marketing"
+                    className="founder-real-photo"
+                    loading="lazy"
+                  />
+                  <div className="founder-portrait-vignette"></div>
                   
                   <div className="founder-badge-pill">
                     <span className="dot gold-dot"></span>
-                    FOUNDER & CEO
+                    FOUNDER &amp; CEO
                   </div>
                 </div>
 
                 <div className="founder-card-meta">
                   <div className="founder-name-group">
                     <h3 className="founder-name">Sanskriti Shukla Pathak</h3>
-                    <div className="founder-role">Founder & CEO, Influencer Weds Marketing</div>
+                    <div className="founder-role">Founder &amp; CEO, Influencer Weds Marketing</div>
                   </div>
                   <div className="founder-signature-accent">
                     <span>Sanskriti S. Pathak</span>
@@ -36,65 +39,75 @@ export default function Founder() {
               </div>
             </TiltCard>
             
-            {/* Ambient quote badge */}
-            <div className="founder-quote-badge reveal-3d delay-1">
-              <i className="fa-solid fa-quote-left"></i>
-              <p>Great influencer marketing begins with genuine human connection, not transaction.</p>
+            {/* Ambient Secondary Snapshot Badge */}
+            <div className="founder-snapshot-strip reveal-3d delay-1">
+              <div className="snapshot-mini-frame">
+                <img
+                  src={founderFieldPortrait}
+                  alt="Sanskriti Shukla Pathak on-ground"
+                  className="snapshot-mini-img"
+                  loading="lazy"
+                />
+              </div>
+              <div className="snapshot-quote">
+                <i className="fa-solid fa-quote-left"></i>
+                <p>&ldquo;Great experiences begin with a clear vision, thoughtful collaboration, and an uncompromising eye for detail.&rdquo;</p>
+              </div>
             </div>
           </div>
 
           {/* Right Column: Editorial Narrative & Vision */}
           <div className="founder-copy reveal">
-            <div className="eyebrow">The Person Behind IWM</div>
+            <div className="eyebrow">
+              <span className="dot gold-dot"></span> SECTION 06 / LEADERSHIP
+            </div>
             <h2 className="founder-headline">
-              Turning Creative Vision<br />
-              <em>into Lasting Impact.</em>
+              Meet the Vision<br />
+              <em>Behind IWM.</em>
             </h2>
 
             <div className="founder-statement">
               <p className="statement-lead">
-                Sanskriti believes influencer marketing is about people, possibilities, relationships, and bringing ideas to life.
+                Great experiences begin with a clear vision, thoughtful collaboration, and an uncompromising eye for detail. At IWM, our approach is built around bringing ideas to life and creating meaningful connections between brands and people.
               </p>
               <p className="statement-body">
-                Her vision is to connect creators and brands through meaningful collaborations, recognise individual creator identities, and turn ideas into well-executed campaigns.
-              </p>
-              <p className="statement-body">
-                Under her leadership, IWM operates with a boutique commitment to quality over sheer volume—ensuring every creator partnership is curated with intention, cultural resonance, and meticulous campaign tracking.
+                Under Sanskriti’s direction, IWM pioneered structured creator marketing in Central India before expanding nationwide. She champions creator individuality and genuine brand relationships—ensuring every campaign delivers authentic emotional resonance rather than transactional noise.
               </p>
             </div>
 
             {/* Core Leadership Pillars */}
             <div className="founder-pillars">
-              <div className="founder-pillar-item">
+              <div className="pillar-item">
                 <div className="pillar-num">01</div>
-                <div>
-                  <h4>People & Relationships First</h4>
-                  <p>Building genuine, respectful relationships that creators and brand teams cherish.</p>
+                <div className="pillar-text">
+                  <b>Authentic Alignment</b>
+                  <span>Connecting brands only with creators whose voice naturally aligns with the message.</span>
                 </div>
               </div>
-              <div className="founder-pillar-item">
+              <div className="pillar-item">
                 <div className="pillar-num">02</div>
-                <div>
-                  <h4>Creator Individuality</h4>
-                  <p>Celebrating unique creator voices instead of forcing cookie-cutter promotional scripts.</p>
+                <div className="pillar-text">
+                  <b>Real-World Experience</b>
+                  <span>Bridging digital reach with on-ground event presence and memorable experiential touchpoints.</span>
                 </div>
               </div>
-              <div className="founder-pillar-item">
+              <div className="pillar-item">
                 <div className="pillar-num">03</div>
-                <div>
-                  <h4>Thoughtful Execution</h4>
-                  <p>Transforming innovative creative strategies into measurable, benchmarked campaigns.</p>
+                <div className="pillar-text">
+                  <b>Uncompromising Quality</b>
+                  <span>Every deliverable, timeline, and collaboration held to an editorial, world-class standard.</span>
                 </div>
               </div>
             </div>
 
-            <div className="founder-cta-row">
-              <a href="#contact" className="btn-light">
-                Connect with Sanskriti & IWM <i className="fa-solid fa-arrow-right"></i>
+            {/* Action CTA & direct contact link */}
+            <div className="founder-actions">
+              <a href="#contact" className="btn-dark">
+                Start a Conversation with IWM <i className="fa-solid fa-arrow-right"></i>
               </a>
-              <span className="founder-loc">
-                <i className="fa-solid fa-location-dot"></i> Based in India <span>|</span> Pan-India Execution
-              </span>
+              <a href="#process" className="btn-pill" style={{ borderColor: 'var(--line-w)', color: '#fff' }}>
+                Explore Our Approach <i className="fa-solid fa-arrow-right" style={{ fontSize: '11px', marginLeft: '6px' }}></i>
+              </a>
             </div>
           </div>
         </div>

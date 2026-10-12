@@ -33,7 +33,7 @@ export default function Footer() {
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About IWM</a></li>
             <li><a href="#founder">The Founder</a></li>
-            <li><a href="#team">The Brain Trust</a></li>
+            <li><a href="#nykaaland">Nykaaland Experience</a></li>
             <li><a href="#services">Our Capabilities</a></li>
             <li><a href="#campaigns">Selected Work</a></li>
             <li><a href="#creators">Creator Roster</a></li>

@@ -2,12 +2,12 @@ import { useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
-import Founder from './components/Founder'
-import Services from './components/Services'
+import Nykaaland from './components/Nykaaland'
 import Campaigns from './components/Campaigns'
-import Creators from './components/Creators'
-import Team from './components/Team'
+import Founder from './components/Founder'
 import Process from './components/Process'
+import Services from './components/Services'
+import Creators from './components/Creators'
 import Brands from './components/Brands'
 import Performance from './components/Performance'
 import Testimonials from './components/Testimonials'
@@ -18,7 +18,7 @@ import StorytellerHUD from './components/StorytellerHUD'
 
 export default function App() {
   useEffect(() => {
-    // Intersection Observer for reveal animations
+    // Intersection Observer for reveal animations with generous margins and fallback
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -27,12 +27,24 @@ export default function App() {
           }
         })
       },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.02, rootMargin: '100px 0px 100px 0px' }
     )
 
-    document
-      .querySelectorAll('.reveal, .reveal-3d, .reveal-img')
-      .forEach((el) => io.observe(el))
+    const revealTargets = document.querySelectorAll('.reveal, .reveal-3d, .reveal-img')
+    revealTargets.forEach((el) => io.observe(el))
+
+    // Fallback check to guarantee all visible elements become active immediately
+    const checkVisible = () => {
+      revealTargets.forEach((el) => {
+        const rect = el.getBoundingClientRect()
+        if (rect.top < window.innerHeight + 150 && rect.bottom > -150) {
+          el.classList.add('in')
+        }
+      })
+    }
+    checkVisible()
+    const t1 = setTimeout(checkVisible, 250)
+    const t2 = setTimeout(checkVisible, 800)
 
     // Preloader fadeout
     const preloader = document.getElementById('preloader')
@@ -55,6 +67,8 @@ export default function App() {
     window.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
+      clearTimeout(t1)
+      clearTimeout(t2)
       io.disconnect()
       window.removeEventListener('scroll', handleScroll)
     }
@@ -78,12 +92,12 @@ export default function App() {
       <Header />
       <Hero />
       <About />
-      <Founder />
-      <Services />
+      <Nykaaland />
       <Campaigns />
-      <Creators />
-      <Team />
+      <Founder />
       <Process />
+      <Services />
+      <Creators />
       <Brands />
       <Performance />
       <Testimonials />

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import TiltCard from './TiltCard'
+import nykaalandFoundationPavilion from '../assets/real_photos/nykaaland-foundation-pavilion.jpg'
 
 export default function Contact() {
   const [mode, setMode] = useState('brand') // 'brand' | 'creator'
@@ -57,14 +58,14 @@ export default function Contact() {
             <small style={{ fontSize: '9px', letterSpacing: '.2em' }}>INFLUENCER WEDS MARKETING</small>
           </div>
           <div className="eyebrow" style={{ marginTop: '16px' }}>
-            Let's Connect
+            <span className="dot gold-dot"></span> SECTION 09 / COLLABORATION
           </div>
           <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 400 }}>
-            LET'S MAKE THE NEXT<br />
-            CONNECTION COUNT.
+            Have an Experience<br />
+            <em>in Mind?</em>
           </h2>
-          <p style={{ fontSize: '13px', opacity: 0.72, lineHeight: 1.7, marginTop: '8px' }}>
-            Whether you're a brand looking to connect with creators or a creator exploring new opportunities, let's start a conversation.
+          <p style={{ fontSize: '13.5px', opacity: 0.75, lineHeight: 1.7, marginTop: '10px' }}>
+            Let’s turn your next idea into something worth remembering. Whether you’re a brand seeking impactful campaign execution or a creator exploring meaningful partnerships, we invite you to start a conversation.
           </p>
 
           {/* Quick Dual CTA Selector */}
@@ -126,12 +127,13 @@ export default function Contact() {
         <div className="mid-img reveal-img">
           <TiltCard maxTilt={8} scale={1.02} style={{ height: '100%' }}>
             <img
-              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop"
-              alt="Creative collaboration in studio"
+              src={nykaalandFoundationPavilion}
+              alt="IWM experiential curation in field"
+              loading="lazy"
             />
             <div className="mid-img-caption">
-              <b>Collaborative Energy</b>
-              <span>Where strategy meets creativity</span>
+              <b>Experiential Presence</b>
+              <span>On-ground creative execution</span>
             </div>
           </TiltCard>
         </div>

@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react'
 const chapters = [
   { id: 'home', num: '01', title: 'THE HERO' },
   { id: 'about', num: '02', title: 'ABOUT IWM' },
-  { id: 'founder', num: '03', title: 'THE FOUNDER' },
-  { id: 'services', num: '04', title: 'CAPABILITIES' },
-  { id: 'campaigns', num: '05', title: 'SELECTED WORK' },
-  { id: 'creators', num: '06', title: 'CREATORS' },
-  { id: 'team', num: '07', title: 'BRAIN TRUST' },
-  { id: 'process', num: '08', title: 'OUR APPROACH' },
+  { id: 'nykaaland', num: '03', title: 'NYKAALAND' },
+  { id: 'campaigns', num: '04', title: 'SELECTED WORK' },
+  { id: 'founder', num: '05', title: 'THE FOUNDER' },
+  { id: 'process', num: '06', title: 'OUR APPROACH' },
+  { id: 'services', num: '07', title: 'CAPABILITIES' },
+  { id: 'creators', num: '08', title: 'CREATOR NETWORK' },
   { id: 'brands', num: '09', title: 'IMPACT & PROOF' },
   { id: 'contact', num: '10', title: 'COLLABORATE' }
 ]

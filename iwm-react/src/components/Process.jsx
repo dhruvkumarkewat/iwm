@@ -1,114 +1,93 @@
 import { useState, useEffect, useRef } from 'react'
 import TiltCard from './TiltCard'
 
-const steps = [
+const philosophySteps = [
   {
     num: '01',
-    t: 'Understand',
-    d: 'Understand the brand, its objectives, and the audience it wants to reach.',
-    img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=500&auto=format&fit=crop'
+    title: 'Understand the Vision',
+    subtitle: 'Brand Objectives & Cultural Niche',
+    desc: 'We immerse ourselves in the brand’s core philosophy, target audience demographics, and precise commercial goals before approaching a single creator.',
+    tag: 'Discovery & Context'
   },
   {
     num: '02',
-    t: 'Connect',
-    d: 'Identify relevant creator partnerships and collaboration opportunities.',
-    img: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=500&auto=format&fit=crop'
+    title: 'Shape the Experience',
+    subtitle: 'Creator Matching & Creative Narrative',
+    desc: 'Aligning creators whose authentic storytelling naturally mirrors the brand voice. We co-craft angles that feel native, organic, and culturally relevant.',
+    tag: 'Curation & Narrative'
   },
   {
     num: '03',
-    t: 'Create',
-    d: 'Bring campaign ideas and content planning together.',
-    img: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=500&auto=format&fit=crop'
+    title: 'Bring It to Life',
+    subtitle: 'Flawless On-Ground & Digital Execution',
+    desc: 'From high-energy on-ground activations like Nykaaland to synchronized multi-tier digital rollouts, every asset is executed with editorial precision.',
+    tag: 'Production & Rollout'
   },
   {
     num: '04',
-    t: 'Execute',
-    d: 'Coordinate communication and campaign delivery.',
-    img: 'https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=500&auto=format&fit=crop'
-  },
-  {
-    num: '05',
-    t: 'Build Relationships',
-    d: 'Focus on meaningful relationships and future collaboration opportunities.',
-    img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop'
+    title: 'Refine Every Detail',
+    subtitle: 'Measurable Impact & Lasting Bonds',
+    desc: 'Deep post-campaign analytics—tracking view through rates, engagement quality, CPV benchmarks, and nurturing long-term creator and brand partnerships.',
+    tag: 'Analytics & Growth'
   }
 ]
 
 export default function Process() {
   const sectionRef = useRef(null)
-  const [scrollProgress, setScrollProgress] = useState(0)
+  const [activeStep, setActiveStep] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current) return
       const rect = sectionRef.current.getBoundingClientRect()
       const windowHeight = window.innerHeight
-
-      // Calculate how far down the section has scrolled through the viewport
-      if (rect.top <= windowHeight && rect.bottom >= 0) {
-        const totalDistance = rect.height + windowHeight
-        const currentDistance = windowHeight - rect.top
-        const progress = Math.min(100, Math.max(0, (currentDistance / totalDistance) * 130))
-        setScrollProgress(progress)
+      if (rect.top <= windowHeight * 0.5 && rect.bottom >= 0) {
+        const stepHeight = rect.height / 4
+        const scrolledInto = windowHeight * 0.5 - rect.top
+        const idx = Math.min(3, Math.max(0, Math.floor(scrolledInto / stepHeight)))
+        setActiveStep(idx)
       }
     }
-
     window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
-    <section id="process" ref={sectionRef}>
-      <div className="proc-head reveal">
-        <div>
-          <div className="eyebrow">Our Approach</div>
-          <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 400 }}>
-            A Clear Process.<br />
-            Powerful Results.
-          </h2>
+    <section id="process" ref={sectionRef} className="philosophy-section">
+      <div className="process-header">
+        <div className="eyebrow" style={{ justifyContent: 'center' }}>
+          <span className="dot gold-dot"></span> SECTION 06 / PHILOSOPHY &amp; APPROACH
         </div>
-        <div>
-          <p style={{ maxWidth: '500px', fontSize: '13.5px', opacity: 0.72, lineHeight: 1.65 }}>
-            IWM’s proposed collaboration framework—transparent, relationship-led, and execution-focused from the opening brief to ongoing growth.
-          </p>
-          <div className="proc-narrative-tag">
-            <span className="dot gold-dot"></span>
-            <span>Interactive Storyline • Scroll-synchronized</span>
-          </div>
-        </div>
+        <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 400 }}>
+          How Ideas Turn into<br />
+          <em>Measurable Reality.</em>
+        </h2>
+        <p className="process-subhead">
+          A disciplined, four-phase creative methodology honed across 100+ digital and experiential campaigns.
+        </p>
       </div>
 
-      <div className="proc-row">
-        {/* Scroll-driven animated progress line */}
-        <div
-          id="procFill"
-          style={{
-            width: `${Math.min(100, Math.max(12, scrollProgress))}%`,
-            transition: 'width 0.25s ease-out'
-          }}
-        ></div>
-
-        {steps.map((s, i) => {
-          const stepThreshold = (i / (steps.length - 1)) * 90
-          const isPassed = scrollProgress >= stepThreshold
-          return (
-            <div
-              key={s.num}
-              className={`pstep reveal-3d delay-${(i % 3) + 1} ${isPassed ? 'step-active' : ''}`}
-            >
-              <TiltCard maxTilt={14} perspective={800} scale={1.05} className="pstep-tilt">
-                <div className={`circ ${isPassed ? 'circ-illuminated' : ''}`}>
-                  <img src={s.img} alt={s.t} />
-                  <span className="circ-badge">{s.num}</span>
+      <div className="philosophy-grid">
+        {philosophySteps.map((step, index) => (
+          <div
+            key={step.num}
+            className={`philosophy-card ${activeStep === index ? 'active-step' : ''}`}
+            onMouseEnter={() => setActiveStep(index)}
+          >
+            <TiltCard maxTilt={6} perspective={1100} scale={1.01} className="philosophy-tilt-card">
+              <div className="philosophy-card-inner">
+                <div className="philosophy-top-row">
+                  <span className="philosophy-num">{step.num}</span>
+                  <span className="philosophy-tag">{step.tag}</span>
                 </div>
-              </TiltCard>
-              <b className={`num ${isPassed ? 'gold-text' : ''}`}>{s.num}</b>
-              <h4>{s.t}</h4>
-              <p>{s.d}</p>
-            </div>
-          )
-        })}
+                <h3 className="philosophy-title">{step.title}</h3>
+                <h4 className="philosophy-subtitle">{step.subtitle}</h4>
+                <p className="philosophy-desc">{step.desc}</p>
+                <div className="philosophy-line"></div>
+              </div>
+            </TiltCard>
+          </div>
+        ))}
       </div>
     </section>
   )

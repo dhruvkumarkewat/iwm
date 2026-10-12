@@ -1,43 +1,54 @@
 import HeroCanvas from './HeroCanvas'
 import TiltCard from './TiltCard'
+import heroRealPhoto from '../assets/real_photos/nykaaland-stage-spotlight-team.jpg'
 
 export default function Hero() {
   return (
-    <section id="home">
+    <section id="home" className="hero-editorial">
       <HeroCanvas />
+      
+      {/* Cinematic ambient background with real event photography */}
       <div className="hero-bg">
         <img
           id="heroImg"
-          src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1200&auto=format&fit=crop"
-          alt="IWM Influencer Creator in production"
+          src={heroRealPhoto}
+          alt="IWM on-ground at Nykaaland Festival Stage"
+          className="hero-cinematic-bg-img"
+          loading="eager"
         />
+        <div className="hero-bg-darkener"></div>
       </div>
 
       <div className="hero-inner">
+        {/* Left Column: Luxury Editorial Copy (Section B) */}
         <div className="hero-copy reveal in">
           <div className="hero-badge">
-            <span className="dot"></span> INFLUENCER WEDS MARKETING
+            <span className="dot gold-dot"></span> CENTRAL INDIA’S 1ST INFLUENCER AGENCY
           </div>
-          <h1>
-            Real<br />
-            Creators.<br />
-            <em>Real Impact.</em>
+          <h1 className="hero-editorial-h1">
+            Creating Moments.<br />
+            <em>Building Brand Experiences.</em>
           </h1>
-          <div className="hero-sub">
-            Influencer Marketing <span>|</span> Creator Management <span>|</span> Brand Campaigns <span>|</span> Meme Strategy
-          </div>
+          <p className="hero-editorial-sub">
+            We bring brands and people together through thoughtful experiences, creative storytelling, and exceptional execution.
+          </p>
 
           <div className="hero-ctas">
-            <a href="#contact" className="btn-light">
-              Start a Project <i className="fa-solid fa-arrow-right"></i>
+            <a href="#nykaaland" className="btn-light">
+              Explore Our Work <i className="fa-solid fa-arrow-right"></i>
             </a>
-            <a href="#campaigns" className="btn-pill" style={{ borderColor: 'rgba(255,255,255,.35)' }}>
-              Explore Our Work
+            <a href="#about" className="btn-pill" style={{ borderColor: 'rgba(255,255,255,.35)' }}>
+              Discover IWM
             </a>
           </div>
 
-          {/* Key agency benchmarks pill from storyboard */}
+          {/* Verified Agency Milestones */}
           <div className="hero-stats-strip">
+            <div className="hero-stat-item">
+              <b>3 Years</b>
+              <span>Proven Leadership</span>
+            </div>
+            <div className="hero-stat-sep">/</div>
             <div className="hero-stat-item">
               <b>100+</b>
               <span>Campaigns Delivered</span>
@@ -47,56 +58,44 @@ export default function Hero() {
               <b>500+</b>
               <span>Creators Managed</span>
             </div>
-            <div className="hero-stat-sep">/</div>
-            <div className="hero-stat-item">
-              <b>50+</b>
-              <span>Brands Partnered</span>
-            </div>
           </div>
 
           <div className="scroll-cue">
-            <span className="mouse"><i></i></span> Scroll to explore
+            <span className="mouse"><i></i></span> Scroll to explore the chronicle
           </div>
         </div>
 
+        {/* Right Column: Interactive 3D Real Photograph Showcase */}
         <div className="hero-visual-wrapper">
           <TiltCard
             className="hero-tilt-cluster"
-            maxTilt={10}
+            maxTilt={9}
             perspective={1200}
-            scale={1.03}
+            scale={1.02}
           >
             <div className="hero-visual" id="heroVisual">
-              {/* Main focal creator card */}
+              {/* Main focal real photograph card */}
               <div className="f-main-card">
                 <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=700&auto=format&fit=crop"
-                  alt="IWM Creator Spotlight"
+                  src={heroRealPhoto}
+                  alt="IWM at Nykaaland stage with 3 Years of Impact"
                   className="f-main-img"
+                  loading="eager"
                 />
                 <div className="f-main-overlay">
-                  <span className="f-tag">FEATURED CREATOR</span>
-                  <b>Strategic Collaborations</b>
-                  <p>Turning authentic voices into brand resonance</p>
+                  <span className="f-tag">REAL EVENT EXPERIENCE</span>
+                  <b>Nykaaland 2026 Showcase</b>
+                  <p>Where digital influence meets physical festival scale</p>
                 </div>
               </div>
 
-              {/* Floating 3D interactive elements */}
-              <div className="float f-ig" title="Instagram Campaign Reach">
-                <i className="fa-brands fa-instagram"></i>
+              {/* Floating badges with real verified details */}
+              <div className="float f-card" style={{ top: '6%', left: '-8%' }}>
+                <span style={{ fontSize: '10px', letterSpacing: '.12em', opacity: 0.6, textTransform: 'uppercase' }}>Milestone</span>
+                <b>Central India to National Brands</b>
               </div>
 
-              <div className="float f-heart">
-                <i className="fa-solid fa-heart"></i>
-                <small style={{ fontSize: '11px', color: '#111', fontWeight: 700 }}>313K</small>
-              </div>
-
-              <div className="float f-card">
-                <span style={{ fontSize: '10px', letterSpacing: '.12em', opacity: 0.6, textTransform: 'uppercase' }}>Creators</span>
-                <b>build trust. We build brands.</b>
-              </div>
-
-              <div className="float f-mini">
+              <div className="float f-mini" style={{ bottom: '8%', right: '-6%' }}>
                 <span style={{ fontSize: '10.5px', opacity: 0.7 }}>Best Campaign CPV</span>
                 <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--gold)' }}>₹0.08</div>
                 <div className="bars">

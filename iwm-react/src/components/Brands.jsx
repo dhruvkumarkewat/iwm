@@ -80,7 +80,7 @@ export default function Brands() {
           <div className="marquee-label-top">
             <span className="dot gold-dot"></span> CONTINUOUS BRAND NETWORK
           </div>
-          <HorizontalMarquee speed="26s" pauseOnHover={true}>
+          <HorizontalMarquee speed="24s" pauseOnHover={false}>
             {brandLogos.map((brand, idx) => (
               <div key={`${brand.name}-${idx}`} className="brand-logo-pill">
                 <span style={brand.style}>{brand.name}</span>
@@ -97,11 +97,11 @@ export default function Brands() {
             CAMPAIGN FOOTAGE & PRODUCTION MOMENTS
           </span>
           <small className="strip-hint">
-            <i className="fa-solid fa-arrows-left-right"></i> Auto-streaming • Hover to pause
+            <i className="fa-solid fa-arrows-left-right"></i> Continuous Horizontal Stream · 100% Automatic
           </small>
         </div>
 
-        <HorizontalMarquee speed="40s" direction="normal" pauseOnHover={true}>
+        <HorizontalMarquee speed="36s" direction="normal" pauseOnHover={false}>
           {campaignGalleryImages.map((item, idx) => (
             <TiltCard
               key={`${item.brand}-${idx}`}

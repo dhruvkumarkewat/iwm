@@ -168,11 +168,11 @@ export default function Creators() {
             AUTOMATIC CREATOR SPOTLIGHT REEL
           </span>
           <small style={{ fontSize: '11px', opacity: 0.65 }}>
-            <i className="fa-solid fa-circle-play"></i> Continuous Horizontal Stream • Hover to Pause
+            <i className="fa-solid fa-circle-play"></i> Continuous Horizontal Stream · 100% Automatic
           </small>
         </div>
 
-        <HorizontalMarquee speed="32s" pauseOnHover={true}>
+        <HorizontalMarquee speed="28s" pauseOnHover={false}>
           {creatorsData.map((creator) => (
             <div
               key={creator.n}
